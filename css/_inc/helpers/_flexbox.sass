@@ -3,10 +3,13 @@ $column-width: 100% / $column-numbers
 
 @for $i from 1 through $column-numbers
   .flex-grid-#{$i}
+    +clearfix
+
     display: flex
     flex-wrap: wrap
 
     > .flex-item
+      float: left
       width: floor(100% / $i)
       margin-bottom: $base-unit-layout
 
