@@ -10,6 +10,7 @@ Thumbs.db
 
 *.css
 *.html
+!index.html
 
 push.sh
 release.sh
