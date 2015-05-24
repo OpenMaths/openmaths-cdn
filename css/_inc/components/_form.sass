@@ -12,7 +12,7 @@ button,
     color: $color-grey-200
 
   -webkit-appearance: none
-  border: 1px solid $color-grey-200
+  border: 1px solid $color-grey-100
   background: white
   padding: rem(12px)
   font-family: $font-family-primary !important
@@ -29,10 +29,10 @@ button,
     +box-shadow(0 1px 3px rgba(0, 0, 0, .075))
     // This should not be black
 
-    border-color: $color-grey-300
+    border-color: $color-grey-200
 
     &:focus
-      border-color: $color-grey-500
+      border-color: $color-grey-300
 
 select
   -webkit-appearance: none
@@ -83,7 +83,7 @@ textarea:invalid
       +border-radius(3px)
       +transition(all .25s)
 
-      border: 1px solid $color-grey-200
+      border: 1px solid $color-grey-100
       width: $base-unit-layout - rem(2px)
       height: $base-unit-layout - rem(2px)
       display: block
@@ -116,22 +116,22 @@ textarea:invalid
         +box-shadow(0 1px 3px rgba(0, 0, 0, .075))
         // This should not be black
 
-        border-color: $color-grey-300
+        border-color: $color-grey-200
 
         &:after
           opacity: 1
           background: $color-grey-200
 
-    &:focus, &:active
+    &:focus
       .indicator
-        border-color: $color-grey-500
+        border-color: $color-grey-300
 
         &:after
-          background: $color-grey-500
+          background: $color-grey-300
 
     &.selected
       .indicator
-        border-color: $color-grey-300
+        border-color: $color-blue
 
         &:after
           opacity: 1
@@ -141,10 +141,8 @@ textarea:invalid
         .indicator
           border-color: $color-blue
 
-      &:focus, &:active
+      &:focus
         .indicator
-          border-color: $color-blue-600
-
           &:after
             background: $color-blue-600
 
