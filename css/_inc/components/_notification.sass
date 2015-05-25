@@ -1,0 +1,50 @@
+.notification
+  +transition(top .25s)
+  @extend .text-center
+
+  cursor: pointer
+  height: $quadruple-unit-layout
+  background: $color-alert-info
+  color: rgba(0, 0, 0, .4)
+  padding: 0 $base-unit-layout
+  position: fixed
+  width: 100%
+  top: -($quadruple-unit-layout)
+  left: 0
+
+  &.active
+    top: 0
+
+  +hover
+    small
+      opacity: 1
+
+  &.success, &.success small
+    background: $color-alert-success
+
+  &.warning, &.warning small
+    background: $color-alert-warning
+
+  &.error, &.error small
+    background: $color-alert-error
+
+  small
+    +transition(opacity .25s)
+
+    height: $quadruple-unit-layout
+    line-height: $quadruple-unit-layout
+    background: $color-alert-info
+    display: block
+    position: absolute
+    width: 100%
+    left: 0
+    top: 0
+    opacity: 0
+
+  p
+    +ellipsis
+
+    margin: 0
+    display: block
+    height: $quadruple-unit-layout
+    line-height: $quadruple-unit-layout
