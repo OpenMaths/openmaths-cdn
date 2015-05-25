@@ -1,12 +1,24 @@
-$icons: dive, gear
 $colors: false, dark, grey, white
+$icons: contribute, dive, gear, user
+$sizes: 1, 2, 3, 4
 
 .icon
   position: relative
   top: 1px
   line-height: 1
   display: inline-block
-  background: #000
+  background:
+    color: transparent
+    repeat: no-repeat
+    position: center center
+    size: cover
+
+  @each $size in $sizes
+    &[size='#{$size}']
+      // @TODO
+      // think about using pixels?
+      width: #{$size}rem
+      height: #{$size}rem
 
   @each $icon in $icons
     @each $color in $colors

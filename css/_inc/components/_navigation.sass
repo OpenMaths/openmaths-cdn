@@ -1,14 +1,90 @@
 nav
+  $icon-size: $double-unit-layout
+  $nav-height: $quadruple-unit-layout
+
   +clearfix
 
-  border-bottom: 1px solid $color-grey-50
+  padding: 0 $base-unit-layout
+  position: relative
+  display: block
+  height: $nav-height
+  //border-bottom: 1px solid $color-grey-50
+
+  .logo
+    width: $nav-height
+    height: $nav-height
+    display: block
+    position: absolute
+    overflow: hidden
+    left: 50%
+    top: 0
+    margin-left: -($nav-height / 2)
+    background:
+      color: transparent
+      repeat: no-repeat
+      position: center center
+      size: $triple-unit-layout
+      image: url('/images/logo/glyph-black.svg')
+
+    strong
+      opacity: 0
 
   ul
+    +clearfix
     @extend .unstyled
 
+    display: block
     float: left
 
     li
-      +clearfix
-
       float: left
+      padding: 0 $half-unit-layout
+
+      &:first-of-type
+        padding-left: 0
+
+      &:last-of-type
+        padding-right: 0
+
+      a
+        font-size: rem(15px)
+        color: $color-grey-200
+        display: block
+        position: relative
+        height: $nav-height
+        line-height: $nav-height
+        padding-left: $icon-size * 1.25
+        text-decoration: none
+
+        .icon
+          position: absolute
+          left: 0
+          top: 50%
+          width: $icon-size
+          height: $icon-size
+          margin-top: -($icon-size / 2)
+          background:
+            size: $icon-size * 1.65
+
+          &.dive
+            background:
+              size: $icon-size * 1.75
+
+          &.gear
+            background:
+              size: $icon-size * 1.6
+
+          &.user
+            background:
+              size: $icon-size * 1.85
+
+      &.active
+        a
+          color: $color-black
+
+    &.actions
+      float: right
+
+      li
+        a
+          padding-left: $icon-size
