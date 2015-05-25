@@ -8,6 +8,7 @@ node_modules
 .Trashes
 Thumbs.db
 
+icon-*.svg
 *.css
 *.html
 !index.html

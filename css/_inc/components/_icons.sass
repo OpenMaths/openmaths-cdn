@@ -1,0 +1,18 @@
+$icons: dive, gear
+$colors: false, dark, grey, white
+
+.icon
+  position: relative
+  top: 1px
+  line-height: 1
+  display: inline-block
+  background: #000
+
+  @each $icon in $icons
+    @each $color in $colors
+      &.#{$icon}
+        @if $color != false
+          &.#{$color}
+            background-image: url('/images/icons/icon-set_#{$icon}-#{$color}.svg')
+        @else
+          background-image: url('/images/icons/icon-set_#{$icon}.svg')
