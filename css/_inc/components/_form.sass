@@ -25,7 +25,7 @@ button,
   &:last-child
     margin-bottom: 0
 
-  +hover()
+  +hover
     +box-shadow(0 1px 3px rgba(0, 0, 0, .075))
     // This should not be black
 
@@ -201,3 +201,50 @@ textarea:invalid
   min-height: $double-unit-layout
   display: none
   margin: 0 0 $base-unit-layout
+
+
+.button, button
+  @extend .text-uppercase
+
+  background: white
+  text-decoration: none
+  padding: $base-unit-layout $double-half-unit-layout
+  cursor: pointer
+  border-color: $color-grey-300
+  color: $color-grey-300
+
+  +hover
+    border-color: $color-grey-300
+    color: $color-grey-300
+
+  &:disabled
+    background: $color-grey-50
+    border-color: $color-grey-100
+    color: $color-grey-200
+    cursor: not-allowed
+
+    &:hover, &:focus, &:active
+      +box-shadow(none)
+
+      border-color: $color-grey-100
+      color: $color-grey-200
+
+  &.blue
+    border-color: $color-blue-600
+    background: $color-blue
+    color: white
+
+  &.red
+    border-color: $color-red-600
+    background: $color-red
+    color: white
+
+  &.green
+    border-color: $color-green-600
+    background: $color-green
+    color: white
+
+  &.yellow
+    border-color: $color-yellow-600
+    background: $color-yellow
+    color: white
