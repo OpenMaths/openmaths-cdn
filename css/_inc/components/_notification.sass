@@ -28,6 +28,19 @@
   &.error, &.error small
     background: $color-alert-error
 
+  .close
+    @extend .text-center
+
+    width: $quadruple-unit-layout / 1.5
+    height: $quadruple-unit-layout
+    line-height: $quadruple-unit-layout - rem(2px)
+    position: absolute
+    top: 0
+    right: 0
+    font:
+      family: $font-family-secondary
+      size: rem(22px)
+
   small
     +transition(opacity .25s)
 
