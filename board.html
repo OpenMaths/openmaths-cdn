@@ -66,21 +66,36 @@
     <div class="row">
         <div class="column"></div>
         <div class="column">
-            <i class="controls full-screen"></i>
-            <i class="controls replace-with"></i>
+            <i class="controls full-screen">
+                <span class="icon list white" size="2" style="top: 0"></span>
+                Details
+            </i>
+            <i class="controls replace-with">
+                <span class="icon search white" size="2" style="top: 0"></span>
+                Search
+            </i>
 
             <div class="voting">
                 <div class="upvote">
+                    <strong>Upvote</strong>
                     <i>+</i>
                 </div>
                 <div class="downvote">
+                    <strong>Downvote</strong>
                     <i>–</i>
                 </div>
             </div>
 
             <div class="content">
-                <article>
-                    This is the content
+                <article class="flex center-vertically">
+                    <div>
+                        <small class="label">Formal Definition</small>
+                        <strong class="heading block">Set Membership Infix Notation</strong>
+                        <main>
+                            \forall t_1 \forall t_2 \text{Term}(t_1) \wedge \text{Term}(t_2) \rightarrow
+                            ``t_1 \in t_2" := ``\in(t_1, t_2)"
+                        </main>
+                    </div>
                 </article>
             </div>
         </div>
