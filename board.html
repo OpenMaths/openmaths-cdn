@@ -5,6 +5,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/app.min.css">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.content').perfectScrollbar({suppressScrollX: true});
+        });
+    </script>
 </head>
 <body class="page-board">
 
@@ -57,7 +65,25 @@
     </div>
     <div class="row">
         <div class="column"></div>
-        <div class="column"></div>
+        <div class="column">
+            <i class="controls full-screen"></i>
+            <i class="controls replace-with"></i>
+
+            <div class="voting">
+                <div class="upvote">
+                    <i>+</i>
+                </div>
+                <div class="downvote">
+                    <i>–</i>
+                </div>
+            </div>
+
+            <div class="content">
+                <article>
+                    This is the content
+                </article>
+            </div>
+        </div>
         <div class="column"></div>
     </div>
     <div class="row">

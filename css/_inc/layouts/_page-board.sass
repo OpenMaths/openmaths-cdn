@@ -27,6 +27,84 @@
       background: white
       height: 100%
       float: left
+      position: relative
 
       &:last-of-type
         border-right: 0
+
+      +hover
+        .controls,
+        .voting
+          opacity: 1
+
+      .controls
+        +z-index(board-column-controls)
+        +transition(opacity .25s)
+
+        opacity: 0
+        display: block
+        position: absolute
+        right: $base-unit-layout
+        width: $double-unit-layout
+        height: $double-unit-layout
+        background: $color-black
+
+        &.full-screen
+          top: $base-unit-layout
+
+        &.replace-with
+          bottom: $base-unit-layout
+
+      .voting
+        $voting-width: $double-half-unit-layout
+
+        +z-index(board-column-voting)
+        +transition(opacity .25s)
+
+        opacity: 0
+        position: absolute
+        left: -1px
+        top: 0
+        width: $voting-width
+        height: 100%
+        background: $color-black
+
+        .upvote,
+        .downvote
+          cursor: pointer
+          position: relative
+          height: 50%
+          background: $color-green
+
+          i
+            @extend .text-center
+
+            color: white
+            position: absolute
+            width: $voting-width
+            height: $voting-width
+            line-height: $voting-width
+            margin-top: -($voting-width / 2)
+            top: 50%
+            left: 0
+            display: block
+            font:
+              family: $font-family-secondary
+              size: rem(18px)
+              style: normal
+              //weight: 700
+
+        .downvote
+          background: $color-red
+
+    .content
+      +z-index(board-column-content)
+
+      position: absolute
+      width: 100%
+      height: 100%
+
+      article
+        padding: $double-unit-layout
+        background: #000
+        height: 750px
