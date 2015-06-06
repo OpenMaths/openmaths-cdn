@@ -1,0 +1,70 @@
+.page-board .row .column
+  .controls-holder
+    +clearfix
+    +z-index(board-column-controls)
+    +transition(opacity .25s)
+
+    opacity: 0
+    position: absolute
+    right: $half-unit-layout
+
+    &.top
+      top: $half-unit-layout
+
+    &.bottom
+      bottom: $half-unit-layout
+
+    &.left
+      right: auto
+      left: $half-unit-layout
+
+      .controls
+        margin-left: 0
+        margin-right: $half-unit-layout
+        float: left
+
+        small
+          color: $color-black
+
+        &.upvote,
+        &.downvote
+          +transition(all .25s)
+
+          background: white
+
+          +hover
+            background: $color-green
+
+          &.downvote
+            +hover
+              background: $color-red
+
+    .controls
+      +clearfix
+      +transition(max-width .25s)
+
+      margin-left: $half-unit-layout
+      float: right
+      cursor: pointer
+      max-width: $double-unit-layout
+      height: $double-unit-layout
+      background: $color-black
+      overflow: hidden
+      color: white
+
+      .icon
+        float: left
+        display: block
+        top: 0
+
+      small
+        float: left
+        height: $double-unit-layout
+        line-height: $double-unit-layout
+        display: block
+        padding: 0 $half-unit-layout 0 $quarter-unit-layout
+        font:
+          size: rem(12px)
+
+      +hover
+        max-width: 100%
