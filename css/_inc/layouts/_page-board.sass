@@ -33,34 +33,86 @@
         border-right: 0
 
       +hover
-        .controls,
+        .controls-holder,
         .voting
           opacity: 1
 
-      .controls
+      .controls-holder
+        +clearfix
         +z-index(board-column-controls)
-        +transition(all .25s)
+        +transition(opacity .25s)
 
-        cursor: pointer
         opacity: 0
-        display: block
         position: absolute
         right: $half-unit-layout
-        max-width: $double-unit-layout
-        height: $double-unit-layout
-        background: $color-black
-        overflow: hidden
-        color: white
 
-        &.full-screen
+        &.left
+          right: auto
+          left: $half-unit-layout
+
+          .controls
+            margin-left: 0
+            margin-right: $half-unit-layout
+            float: left
+
+            small
+              color: $color-black
+
+            &.upvote,
+            &.downvote
+              +transition(all .25s)
+
+              background: white
+
+              +hover
+                background: $color-green
+
+              &.downvote
+                +hover
+                  background: $color-red
+
+        &.top
           top: $half-unit-layout
 
-        &.replace-with
-          display: none
+        &.bottom
           bottom: $half-unit-layout
 
-        +hover
-          max-width: 100%
+        .controls
+          +clearfix
+          +transition(max-width .25s)
+
+          margin-left: $half-unit-layout
+          float: right
+          cursor: pointer
+          max-width: $double-unit-layout
+          height: $double-unit-layout
+          background: $color-black
+          overflow: hidden
+          color: white
+
+          .icon
+            float: left
+            display: block
+            top: 0
+
+          small
+            float: left
+            height: $double-unit-layout
+            line-height: $double-unit-layout
+            display: block
+            padding: 0 $half-unit-layout 0 $quarter-unit-layout
+            font:
+              size: rem(12px)
+
+          &.expand
+
+          &.details
+
+          &.search
+          //display: none
+
+          +hover
+            max-width: 100%
 
       .voting
         $voting-width: $double-half-unit-layout
@@ -75,7 +127,7 @@
         left: 0
         top: 0
         height: 100%
-        background: $color-black
+        background: white
 
         +hover
           width: 50%
@@ -86,7 +138,7 @@
               opacity: 1
               font:
                 weight: 500
-          //family: $font-family-secondary
+        //family: $font-family-secondary
 
         .upvote,
         .downvote
@@ -95,11 +147,11 @@
           cursor: pointer
           position: relative
           height: 50%
-          background: $color-green
+          //background: $color-green
           width: 100%
 
           +hover
-            background: $color-green-400
+            background: $color-green
 
           strong
             +transition(opacity .25s)
@@ -108,24 +160,24 @@
             position: absolute
             height: $voting-width
             line-height: $voting-width
-            margin-top: -($voting-width / 2)
-            top: 50%
+            //margin-top: -($voting-width / 2)
+            top: 0
             left: 0
             width: 100%
             opacity: 0
             display: block
-            color: white
+            color: $color-black
 
           i
             @extend .text-center
 
-            color: white
+            color: $color-black
             position: absolute
             width: $voting-width
             height: $voting-width
             line-height: $voting-width
-            margin-top: -($voting-width / 2)
-            top: 50%
+            //margin-top: -($voting-width / 2)
+            top: 0
             left: 0
             display: block
             font:
@@ -135,10 +187,13 @@
         //weight: 700
 
         .downvote
-          background: $color-red
+          //background: $color-red
+          i
+            top: auto
+            bottom: 0
 
           +hover
-            background: $color-red-400
+            background: $color-red
 
     .content
       +z-index(board-column-content)
