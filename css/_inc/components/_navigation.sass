@@ -5,10 +5,25 @@ nav
   +clearfix
 
   padding: 0 $base-unit-layout
-  position: relative
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
   display: block
   height: $nav-height
-  //border-bottom: 1px solid $color-grey-50
+  background: white
+  border-bottom: 1px solid $color-grey-50
+
+  &.hiding-on
+    +transition(top .25s)
+
+    top: -($nav-height)
+
+    +hover
+      top: 0
+
+      .show-nav
+        opacity: 0
 
   .logo
     width: $nav-height
@@ -88,3 +103,33 @@ nav
       li
         a
           padding-left: $icon-size
+
+  .show-nav
+    $slider-size: $double-unit-layout
+
+    +transition(opacity .25s)
+
+    opacity: 1
+    width: $slider-size
+    height: $slider-size + $base-unit-layout
+    position: absolute
+    bottom: -($slider-size + $base-unit-layout)
+    left: 50%
+    margin-left: -($slider-size / 2)
+
+    .jalousie
+      cursor: pointer
+      padding: rem(10px) rem(8px) 0
+      width: $slider-size
+      height: $slider-size + rem(1px)
+      background: $color-black
+      margin-top: $base-unit-layout
+
+      i
+        display: block
+        height: 1px
+        background: white
+        margin-bottom: rem(5px)
+
+        &:last-of-type
+          margin-bottom: 0
