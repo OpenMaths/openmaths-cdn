@@ -11,4 +11,4 @@ Thumbs.db
 *.css
 
 push.sh
-release.sh
+bump-version.sh

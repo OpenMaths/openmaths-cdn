@@ -1,0 +1,32 @@
+.page-board
+  $max-row-numbers: 6
+
+  @for $i from 1 through $max-row-numbers
+    $size: (100 / $i)
+
+    .rows-#{$i}
+      .row
+        height: #{$size}vh
+
+    .columns-#{$i}
+      .row
+        .column
+          width: #{$size}%
+
+  .row
+    +clearfix
+
+    border-bottom: 1px solid red
+    background: #000
+
+    &:last-of-type
+      border-bottom: 0
+
+    .column
+      border-right: 1px solid blue
+      background: #333
+      height: 100%
+      float: left
+
+      &:last-of-type
+        border-right: 0
