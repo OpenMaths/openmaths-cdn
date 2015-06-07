@@ -4,10 +4,17 @@
   $text-color-focus: white
 
   .dive-view-port
+    +transition(top .5s linear)
+    //transition-delay: .25s
+
+    top: 0
     position: relative
     width: 100%
     height: 100vh
     overflow: hidden
+
+    &.slide-up
+      top: -100vh
 
   .ui-diver
     +z-index(ui-diver)
@@ -28,14 +35,19 @@
 
   .dive-actions
     +z-index(dive-actions)
+    +transition(padding-top .25s)
 
     position: relative
     padding: ($quadruple-unit-layout * 4) $double-unit-layout $double-unit-layout
+
+    &.touched
+      padding-top: $quadruple-unit-layout * 2
 
     form
       input
         @extend .text-center
 
+        color: white
         margin: 0
         background: transparent
         width: 100%
@@ -45,3 +57,61 @@
 
         +placeholder
           color: $text-color-light
+
+    .search-results
+      position: relative
+      margin: 0 auto
+      padding: 0
+      list-style: none
+      width: rem(600px)
+      // 5 results
+      max-height: rem(90px) * 5
+
+      li
+        +transition(color .25s)
+
+        cursor: pointer
+        color: $text-color
+        padding: $double-half-unit-layout 0 0
+
+        &.active,
+        &:hover,
+        &:focus
+          color: $text-color-focus
+
+          .details
+            .label
+              color: $text-color-focus
+              border-color: $text-color-focus
+
+        strong
+          +ellipsis
+
+          padding: 0 0 $quarter-unit-layout
+          display: block
+          font:
+            size: rem(22px)
+        //weight: 500
+
+        .details
+          +clearfix
+
+          display: block
+
+          .label
+            +transition(all .25s)
+
+            color: $text-color
+            border-color: $text-color
+
+          em.label
+            border: 0
+            float: right
+            font:
+              style: normal
+              size: rem(14px)
+
+          small.label
+            float: left
+            font:
+              size: rem(12px)
