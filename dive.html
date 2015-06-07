@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>openmaths.io sandbox</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/app.min.css">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.content').perfectScrollbar({suppressScrollX: true});
+        });
+    </script>
+</head>
+<body class="page-dive">
+
+<nav>
+    <ul>
+        <li class="active">
+            <a href="#">
+                <i class="icon dive"></i>
+                Explore
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="icon contribute grey"></i>
+                Contribute
+            </a>
+        </li>
+    </ul>
+
+    <a href="/" class="logo">
+        <strong>openmaths</strong>
+    </a>
+
+    <ul class="actions">
+        <li>
+            <a href="#">
+                <i class="icon gear grey"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="icon user grey"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="show-nav">
+        <!--If someone finds this name and is wondering "WTF?" - send me an email, I will explain :)-->
+        <div class="jalousie">
+            <i></i><i></i><i></i>
+        </div>
+    </div>
+</nav>
+
+<div class="dive-view-port">
+    <div class="ui-diver"></div>
+</div>
+
+</body>
+</html>

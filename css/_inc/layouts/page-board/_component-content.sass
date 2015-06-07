@@ -1,4 +1,39 @@
 .page-board .row .column
+  .add-content
+    +transition(opacity .25s)
+
+    display: none
+    padding: $double-unit-layout
+    cursor: pointer
+    opacity: 0
+    position: absolute
+    width: 100%
+    height: 100%
+    background:
+      color: transparent
+      image: url('#{$image-base}/icons/icon-set_search-grey.svg')
+      position: center center
+      repeat: no-repeat
+      size: 25%
+
+    +hover
+      opacity: .75
+
+    form
+      input
+        +box-shadow(none)
+        +border-radius(0)
+        @extend .text-center
+
+        color: $color-black
+        border: 0
+        border-bottom: 1px solid $color-grey-100
+        width: 100%
+        margin: 0
+      
+        &:focus
+          border-color: $color-black
+
   .content
     +z-index(board-column-content)
 
@@ -14,12 +49,14 @@
         border-color: $color-black
         color: $color-black
         font:
-          size: rem(12px)
+          size: rem(11px)
 
       .heading
         +ellipsis
 
-        padding: $half-unit-layout 0 $base-unit-layout
+        padding: $base-unit-layout 0 $base-unit-layout
+        font:
+          size: rem(18px)
 
       main
         line-height: 1.5
