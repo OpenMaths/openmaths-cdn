@@ -20,6 +20,9 @@ nav
 
     top: -($nav-height)
 
+    .show-nav
+      display: block
+
     +hover
       top: 0
 
@@ -110,6 +113,7 @@ nav
 
     +transition(opacity .25s)
 
+    display: none
     opacity: 1
     width: $slider-size
     height: $slider-size + $base-unit-layout
@@ -134,3 +138,17 @@ nav
 
         &:last-of-type
           margin-bottom: 0
+
+  &.transparent
+    background: transparent
+    border: 0
+
+    .logo
+      background:
+        image: url('/images/logo/glyph-white.svg')
+
+    ul
+      li
+        &.active
+          a
+            color: white

@@ -1,4 +1,8 @@
 .page-dive
+  $text-color: rgba(255, 255, 255, .4)
+  $text-color-light: rgba(255, 255, 255, .2)
+  $text-color-focus: white
+
   .dive-view-port
     position: relative
     width: 100%
@@ -6,14 +10,38 @@
     overflow: hidden
 
   .ui-diver
+    +z-index(ui-diver)
+
     position: absolute
-    top: 0 // This can go up to -10% when typing
+    top: 0
+    // This can go up to -10% when typing
     left: 0
     width: 100%
     height: 110%
     background:
-      color: #03233C // @TODO abstract to var?
+      color: #03233C
+      // @TODO abstract to var?
       image: url('#{$image-base}/background/cover-dive.jpg')
       position: center top
       repeat: no-repeat
       size: cover
+
+  .dive-actions
+    +z-index(dive-actions)
+
+    position: relative
+    padding: ($quadruple-unit-layout * 4) $double-unit-layout $double-unit-layout
+
+    form
+      input
+        @extend .text-center
+
+        margin: 0
+        background: transparent
+        width: 100%
+        display: block
+        font:
+          size: rem(68px)
+
+        +placeholder
+          color: $text-color-light

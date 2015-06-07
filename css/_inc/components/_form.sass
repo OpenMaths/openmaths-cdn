@@ -34,6 +34,13 @@ button,
     &:focus
       border-color: $color-grey-300
 
+input
+  &.unstyled
+    +border-radius(0)
+    +box-shadow(none)
+
+    border: 0
+
 select
   -webkit-appearance: none
   background: url("#{$image-base}/icons/grey/arrow-bottom.svg") no-repeat right $base-unit-layout top 50%
@@ -201,7 +208,6 @@ textarea:invalid
   min-height: $double-unit-layout
   display: none
   margin: 0 0 $base-unit-layout
-
 
 .button, button
   @extend .text-uppercase
