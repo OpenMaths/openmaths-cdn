@@ -20,13 +20,13 @@ nav
 
     top: -($nav-height)
 
-    .show-nav
+    .ui-show-nav
       display: block
 
     +hover
       top: 0
 
-      .show-nav
+      .ui-show-nav
         opacity: 0
 
   .logo
@@ -108,8 +108,8 @@ nav
         a
           padding-left: $icon-size
 
-  .show-nav
-    $slider-size: $double-unit-layout
+  .ui-show-nav
+    $slider-size: $double-unit-layout + $half-unit-layout
 
     +transition(opacity .25s)
 
@@ -122,22 +122,28 @@ nav
     left: 50%
     margin-left: -($slider-size / 2)
 
-    .jalousie
+    .ui-jalousie
       cursor: pointer
-      padding: rem(10px) rem(8px) 0
       width: $slider-size
-      height: $slider-size + rem(1px)
+      height: $slider-size
       background: $color-black
       margin-top: $base-unit-layout
+      position: relative
 
       i
+        position: absolute
+        width: 50%
+        left: 25%
+        top: 50%
         display: block
         height: 1px
         background: white
-        margin-bottom: rem(5px)
+
+        &:first-of-type
+          top: 35%
 
         &:last-of-type
-          margin-bottom: 0
+          top: 65%
 
   &.transparent
     background: transparent

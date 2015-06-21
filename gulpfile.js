@@ -9,7 +9,7 @@ var autoprefixer = require('gulp-autoprefixer'),
 
 gulp.task('staticServer', function () {
 	var server = express(),
-		port = 9090;
+		port = 8089;
 
 	server.use(express.static('./'));
 	server.all('/*', function (req, res) {
