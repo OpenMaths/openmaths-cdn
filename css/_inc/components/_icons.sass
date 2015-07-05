@@ -1,4 +1,4 @@
-$colors: false, dark, grey, white
+$colors: false, black, dark, grey, white
 $icons: contribute, dive, down, expand, gear, list, search, up, user
 $sizes: 1, 2, 3, 4
 
@@ -24,7 +24,11 @@ $sizes: 1, 2, 3, 4
     @each $color in $colors
       &.#{$icon}
         @if $color != false
-          &.#{$color}
-            background-image: url('/images/icons/icon-set_#{$icon}-#{$color}.svg')
+          @if $color == black
+            &.#{$color}
+              background-image: url('/images/icons/icon-set_#{$icon}.svg')
+          @else
+            &.#{$color}
+              background-image: url('/images/icons/icon-set_#{$icon}-#{$color}.svg')
         @else
           background-image: url('/images/icons/icon-set_#{$icon}.svg')

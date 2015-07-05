@@ -86,20 +86,42 @@ nav
             size: $icon-size * 1.65
 
           &.dive
+            @extend .icon.dive.grey
+
             background:
               size: $icon-size * 1.75
 
+          &.contribute
+            @extend .icon.contribute.grey
+
           &.gear
+            @extend .icon.gear.grey
+
             background:
               size: $icon-size * 1.6
 
           &.user
+            @extend .icon.user.grey
+
             background:
               size: $icon-size * 1.85
 
       &.active
         a
           color: $color-black
+
+          .icon
+            &.dive
+              @extend .icon.dive.black
+
+            &.contribute
+              @extend .icon.contribute.black
+
+            &.gear
+              @extend .icon.gear.black
+
+            &.user
+              @extend .icon.user.black
 
     &.actions
       float: right
@@ -158,3 +180,16 @@ nav
         &.active
           a
             color: white
+
+            .icon
+              &.dive
+                @extend .icon.dive.white
+
+              &.contribute
+                @extend .icon.contribute.white
+
+              &.gear
+                @extend .icon.gear.white
+
+              &.user
+                @extend .icon.user.white
