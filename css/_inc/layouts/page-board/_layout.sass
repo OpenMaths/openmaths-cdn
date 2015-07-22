@@ -25,12 +25,17 @@
       border-right: 1px solid $color-grey-100
       height: 100%
       float: left
-      position: relative
 
       &:last-of-type
         border-right: 0
 
       +hover
-        .controls-holder,
-        .voting
-          opacity: 1
+        .umi
+          .controls-holder,
+          .manage-rows, .manage-columns,
+          .voting
+            opacity: 1
+
+      .umi
+        position: relative
+        height: 100%
