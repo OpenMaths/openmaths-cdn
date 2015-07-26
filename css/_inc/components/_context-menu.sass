@@ -1,0 +1,25 @@
+.context-menu-container
+  position: relative
+
+  .context-menu
+    //+border-radius(3px)
+    @extend .unstyled
+
+    border: 1px solid $color-grey-100
+    left: $base-unit-layout
+    top: $base-unit-layout
+    position: absolute
+    background: tint($color-grey-50, 50%)
+    color: $color-grey-500
+
+    li
+      +transform(background .25s)
+
+      cursor: pointer
+      padding: $half-unit-layout $base-unit-layout
+      font:
+        family: $font-family-secondary
+        size: rem(13px)
+
+      +hover
+        background: $color-grey-50
