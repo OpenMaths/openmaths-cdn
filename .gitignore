@@ -11,5 +11,4 @@ Thumbs.db
 
 *.css
 
-push.sh
-bump-version.sh
+/dist

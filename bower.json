@@ -1,0 +1,24 @@
+{
+  "name": "openmaths-static",
+  "version": "0.0.0",
+  "homepage": "https://github.com/OpenMaths/openmaths-static",
+  "authors": [
+    "Slavomir Vojacek <slavomirvojacek@gmail.com>"
+  ],
+  "description": "OpenMaths Web App dependencies",
+  "keywords": [
+    "openmaths"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "perfect-scrollbar": "~0.6.2"
+  }
+}
