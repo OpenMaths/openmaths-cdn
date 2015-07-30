@@ -1,21 +1,24 @@
 @font-face
   font-family: 'meslo'
-  src: url('../fonts/meslo-regular/meslo-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/meslo-regular/meslo-regular.woff') format('woff'), url('../fonts/meslo-regular/meslo-regular.ttf')  format('truetype'), url('../fonts/meslo-regular/meslo-regular.svg#meslo-bold') format('svg')
+  src: url('/fonts/meslo-regular/meslo-regular.eot?#iefix') format('embedded-opentype'), url('/fonts/meslo-regular/meslo-regular.woff') format('woff'), url('/fonts/meslo-regular/meslo-regular.ttf')  format('truetype'), url('/fonts/meslo-regular/meslo-regular.svg#meslo-bold') format('svg')
   font-weight: normal
   font-style: normal
 
 @font-face
   font-family: 'meslo-bold'
-  src: url('../fonts/meslo-bold/meslo-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/meslo-bold/meslo-bold.woff') format('woff'), url('../fonts/meslo-bold/meslo-bold.ttf')  format('truetype'), url('../fonts/meslo-bold/meslo-bold.svg#meslo-bold') format('svg')
+  src: url('/fonts/meslo-bold/meslo-bold.eot?#iefix') format('embedded-opentype'), url('/fonts/meslo-bold/meslo-bold.woff') format('woff'), url('/fonts/meslo-bold/meslo-bold.ttf')  format('truetype'), url('/fonts/meslo-bold/meslo-bold.svg#meslo-bold') format('svg')
   font-weight: normal
   font-style: normal
 
-$font-meslo: "meslo", Helvetica, Arial, sans-serif
-$font-meslo-bold: "meslo-bold", Helvetica, Arial, sans-serif
+$ff-anonymous-pro: "Anonymous Pro", Helvetica, Arial, sans-serif
+
+$ff-meslo: "meslo", Helvetica, Arial, sans-serif
+$ff-meslo-bold: "meslo-bold", Helvetica, Arial, sans-serif
+
 
 // This is the primary font stack. It is to be used on most elements containing
 // text, mainly longform, but also inputs and buttons.
-$font-family-primary: "Anonymous Pro", Helvetica, Arial, sans-serif
+$font-family-primary: $ff-anonymous-pro
 
 // This is the secondary font stack. It is to be used mainly on headings.
-$font-family-secondary: $font-meslo
+$font-family-secondary: $ff-meslo
