@@ -72,39 +72,18 @@ nav
         position: relative
         height: $nav-height
         line-height: $nav-height
-        padding-left: $icon-size * 1.25
         text-decoration: none
 
-        .icon
-          position: absolute
-          left: 0
-          top: 50%
-          width: $icon-size
-          height: $icon-size
-          margin-top: -($icon-size / 2)
-          background:
-            size: $icon-size * 1.65
+        .om-icon
+          position: relative
+          top: rem(2px)
+          line-height: 1
+          font:
+            size: rem(22px)
 
-          &.dive
-            @extend .icon.dive.grey
+          &.om-icon-terminal
+            margin-right: rem(4px)
 
-            background:
-              size: $icon-size * 1.75
-
-          &.contribute
-            @extend .icon.contribute.grey
-
-          &.gear
-            @extend .icon.gear.grey
-
-            background:
-              size: $icon-size * 1.6
-
-          &.user
-            @extend .icon.user.grey
-
-            background:
-              size: $icon-size * 1.85
 
       &.active
         a
@@ -128,7 +107,8 @@ nav
 
       li
         a
-          padding-left: $icon-size
+          .om-icon
+            top: rem(3px)
 
   .ui-show-nav
     $slider-size: $double-unit-layout + $half-unit-layout

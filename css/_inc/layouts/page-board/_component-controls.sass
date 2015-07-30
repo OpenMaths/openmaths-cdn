@@ -32,6 +32,9 @@
 
           background: white
 
+          .om-icon
+            color: $color-black
+
           +hover
             background: $color-green
 
@@ -52,89 +55,24 @@
       overflow: hidden
       color: white
 
-      .icon
+      .om-icon
+        @extend .text-center
+
         float: left
         display: block
         top: 0
+        width: $double-unit-layout
+        height: $double-unit-layout
+        line-height: $double-unit-layout
 
       small
         float: left
         height: $double-unit-layout
         line-height: $double-unit-layout
         display: block
-        padding: 0 $half-unit-layout 0 $quarter-unit-layout
+        padding: 0 $half-unit-layout 0 0
         font:
           size: rem(12px)
 
       +hover
         max-width: 100%
-
-  .manage-rows, .manage-columns
-    +clearfix
-    +transition(opacity .25s)
-
-    opacity: 0
-    position: absolute
-    background: white
-    //background: $color-grey-50
-
-    small
-      @extend .text-center
-
-      color: $color-grey-200
-      cursor: pointer
-      position: relative
-      width: 50%
-      float: left
-      display: block
-      height: $double-unit-layout
-      line-height: $double-unit-layout
-      font:
-        size: rem(12px)
-
-      &:first-of-type
-        border-right: 1px solid $color-grey-100
-
-  .manage-rows
-    width: 100%
-    height: $double-unit-layout
-    left: 0
-
-    &.top
-      top: -($double-unit-layout + rem(1px))
-      border-top: 1px solid $color-grey-100
-
-    &.bottom
-      bottom: -($double-unit-layout + rem(1px))
-      border-bottom: 1px solid $color-grey-100
-
-  .manage-columns
-    height: 100%
-    width: $double-unit-layout
-    top: 0
-
-    small
-      width: 100%
-      height: 50%
-      float: none
-
-      .fa
-        position: absolute
-        top: 50%
-        left: 0
-        width: 100%
-        height: $double-unit-layout
-        line-height: $double-unit-layout
-        margin-top: -($double-unit-layout / 2)
-
-      &:first-of-type
-        border-right: 0
-        border-bottom: 1px solid $color-grey-100
-
-    &.right
-      right: -($double-unit-layout + rem(1px))
-      border-right: 1px solid $color-grey-100
-
-    &.left
-      left: -($double-unit-layout + rem(1px))
-      border-left: 1px solid $color-grey-100
