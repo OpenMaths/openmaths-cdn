@@ -56,6 +56,9 @@ nav
     float: left
 
     li
+      +transition(color .25s)
+
+      color: $color-grey-200
       float: left
       padding: 0 $half-unit-layout
 
@@ -65,10 +68,13 @@ nav
       &:last-of-type
         padding-right: 0
 
+      +hover
+        color: $color-black
+
       a
         font-size: rem(15px)
-        color: $color-grey-200
         display: block
+        color: inherit
         position: relative
         height: $nav-height
         line-height: $nav-height
@@ -81,14 +87,10 @@ nav
           font:
             size: rem(22px)
 
-          &.om-icon-terminal
-            margin-right: rem(4px)
-
-
       &.active
-        a
-          color: $color-black
+        color: $color-black
 
+        a
           .icon
             &.dive
               @extend .icon.dive.black
@@ -106,9 +108,15 @@ nav
       float: right
 
       li
+        +hover
+          a
+            max-width: rem(200px)
+
         a
-          .om-icon
-            top: rem(3px)
+          +icon-expand(rem(24px), rem(12px), rem(16px))
+      
+          .icon-label
+            padding-left: rem(28px)
 
   .ui-show-nav
     $slider-size: $double-unit-layout + $half-unit-layout

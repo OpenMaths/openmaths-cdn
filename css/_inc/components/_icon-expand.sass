@@ -1,0 +1,33 @@
+=icon-expand($icon-container-size: rem(24px), $label-size: rem(12px), $icon-size: rem(16px), $delay: .25s)
+  +clearfix
+  +transition(max-width .25s)
+
+  transition-delay: $delay
+
+  position: relative
+  max-width: $icon-container-size
+  overflow: hidden
+
+  .icon-label, .om-icon
+    display: inline-block
+
+  .icon-label
+    // @TODO investigate this weird hack..
+    vertical-align: top
+    padding-left: $icon-container-size
+    white-space: nowrap
+    font:
+      size: $label-size
+
+  .om-icon
+    @extend .text-center
+
+    position: absolute
+    left: 0
+    top: 50%
+    margin-top: -($icon-container-size / 2)
+    width: $icon-container-size
+    height: $icon-container-size
+    line-height: $icon-container-size
+    font:
+      size: $icon-size

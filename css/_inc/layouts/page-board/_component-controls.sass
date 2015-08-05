@@ -44,36 +44,18 @@
               background: $color-red
 
     .controls
-      +clearfix
-      +transition(max-width .25s)
+      +icon-expand($double-unit-layout, rem(12px), rem(13px), 0)
 
       margin-left: $half-unit-layout
       float: right
       cursor: pointer
-      max-width: $double-unit-layout
       height: $double-unit-layout
+      line-height: $double-unit-layout
       background: $color-black
-      overflow: hidden
       color: white
 
-      .om-icon
-        @extend .text-center
-
-        float: left
-        display: block
-        top: 0
-        width: $double-unit-layout
-        height: $double-unit-layout
-        line-height: $double-unit-layout
-
-      small
-        float: left
-        height: $double-unit-layout
-        line-height: $double-unit-layout
-        display: block
-        padding: 0 $half-unit-layout 0 0
-        font:
-          size: rem(12px)
+      .icon-label
+        padding-right: $half-unit-layout
 
       +hover
         max-width: 100%
