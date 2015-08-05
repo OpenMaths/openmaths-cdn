@@ -1,40 +1,24 @@
-// Colors
-$ps-rail-hover: #eeeeee
-$ps-bar-default: #aaaaaa
-$ps-bar-hover: #999999
+$ps-rail-hover: $color-grey-50
+$ps-bar-default: $color-grey-100
+$ps-bar-hover: $color-grey-200
+$sidebar-width: rem(8px)
 
-// Helper mixins
-=border-radius($r)
-  -webkit-border-radius: $r
-  -moz-border-radius: $r
-  -ms-border-radius: $r
-  border-radius: $r
-
-=transition($t...)
-  -webkit-transition: $t
-  -moz-transition: $t
-  -o-transition: $t
-  transition: $t
-
-// Scrollbar mixins
 =scrollbar-rail-default
+  +transition(background-color 0.2s linear, opacity 0.2s linear)
+
   display: none
   position: absolute
-  /* please don't change 'position'
-  +border-radius(4px)
   opacity: 0
-  +transition(background-color 0.2s linear, opacity 0.2s linear)
 
 =scrollbar-rail-hover
   background-color: $ps-rail-hover
   opacity: 0.9
 
 =scrollbar-default
-  position: absolute
-  /* please don't change 'position'
-  background-color: $ps-bar-default
-  +border-radius(4px)
   +transition(background-color 0.2s linear)
+
+  position: absolute
+  background-color: $ps-bar-default
 
 =scrollbar-hover
   background-color: $ps-bar-hover
@@ -59,24 +43,20 @@ $ps-bar-hover: #999999
   +in-scrolling
   > .ps-scrollbar-x-rail
     +scrollbar-rail-default
-    bottom: 3px
-    /* there must be 'bottom' for ps-scrollbar-x-rail
-    height: 8px
+    bottom: 0
+    height: $sidebar-width
     > .ps-scrollbar-x
       +scrollbar-default
       bottom: 0
-      /* there must be 'bottom' for ps-scrollbar-x
-      height: 8px
+      height: $sidebar-width
   > .ps-scrollbar-y-rail
     +scrollbar-rail-default
-    right: 3px
-    /* there must be 'right' for ps-scrollbar-y-rail
-    width: 8px
+    right: 0
+    width: $sidebar-width
     > .ps-scrollbar-y
       +scrollbar-default
       right: 0
-      /* there must be 'right' for ps-scrollbar-y
-      width: 8px
+      width: $sidebar-width
   &:hover
     +in-scrolling
     > .ps-scrollbar-x-rail,

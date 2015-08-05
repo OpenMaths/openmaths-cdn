@@ -1,6 +1,5 @@
-=transition($transition: "")
-  @if $transition == ""
-    $transition: all .25s ease-in-out
+=transition($transition...)
+  $transition: if($transition, $transition, all .25s ease-in-out)
 
   -webkit-transition: $transition
   -moz-transition: $transition

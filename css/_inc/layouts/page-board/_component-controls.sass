@@ -31,10 +31,8 @@
         &.downvote
           +transition(all .25s)
 
+          color: $color-black
           background: white
-
-          .om-icon
-            color: $color-black
 
           +hover
             background: $color-green
@@ -44,7 +42,7 @@
               background: $color-red
 
     .controls
-      +icon-expand($double-unit-layout, rem(12px), rem(13px), 0)
+      +icon-expand($double-unit-layout, rem(12px), rem(15px), 0)
 
       margin-left: $half-unit-layout
       float: right
@@ -54,8 +52,11 @@
       background: $color-black
       color: white
 
+      .om-icon
+        top: 54%
+
       .icon-label
         padding-right: $half-unit-layout
 
       +hover
-        max-width: 100%
+        max-width: rem(150px)

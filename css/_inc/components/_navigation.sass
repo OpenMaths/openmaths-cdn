@@ -82,10 +82,10 @@ nav
 
         .om-icon
           position: relative
-          top: rem(2px)
+          top: rem(3px)
           line-height: 1
           font:
-            size: rem(22px)
+            size: rem(24px)
 
       &.active
         color: $color-black
@@ -165,10 +165,13 @@ nav
 
     ul
       li
-        &.active
-          a
-            color: white
+        +hover
+          color: white
 
+        &.active
+          color: white
+
+          a
             .icon
               &.dive
                 @extend .icon.dive.white
