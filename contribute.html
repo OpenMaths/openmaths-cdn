@@ -6,21 +6,93 @@
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/app.min.css">
 </head>
-<body>
+<body class="page-contribute">
 
 <!--@TODO-->
 <!--Update from board layout-->
 
-<nav class="hidden">
-    <a href="/" class="logo">
+<nav id="primary" class="hidden">
+    <ul>
+        <li ui-sref-active="active">
+            <a href ui-sref="explore">
+                <i class="om-icon om-icon-compass"></i>
+                Explore
+            </a>
+        </li>
+        <li ui-sref-active="active" class="active">
+            <a href ui-sref="dive">
+                <i class="om-icon om-icon-flow-tree"></i>
+                Contribute
+            </a>
+        </li>
+    </ul>
+
+    <a href ui-sref="explore" class="logo">
         <strong>openmaths</strong>
     </a>
+
+    <ul class="actions">
+        <li>
+            <a href="#">
+                <i class="om-icon om-icon-font-1"></i>
+                <span class="icon-label">Traditional Definitions</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="om-icon om-icon-sun-inv"></i>
+                <span class="icon-label">Dark Theme</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="om-icon om-icon-user"></i>
+                <span class="icon-label">Sign In with Google</span>
+            </a>
+        </li>
+    </ul>
 
     <div class="ui-show-nav">
         <!--If someone finds this name and is wondering "WTF?" - send me an email, I will explain :)-->
         <div class="ui-jalousie">
             <i></i><i></i><i></i>
         </div>
+    </div>
+</nav>
+
+<main id="ide">
+    <div id="editor">
+        <div class="controls"></div>
+    </div>
+    <div id="preview">
+        <div class="controls"></div>
+    </div>
+</main>
+
+<nav id="contribute-controls">
+    <div class="status">
+        <div class="indicator parsing">
+            <i class="om-icon om-icon-hourglass rotate"></i>
+            <span class="icon-label">Parsing</span>
+        </div>
+        <div class="indicator lock">
+            <i class="om-icon om-icon-lock"></i>
+            <span class="icon-label">Locked</span>
+        </div>
+
+        <div class="indicator parsed active">
+            <i class="om-icon om-icon-ok"></i>
+            <span class="icon-label">Parsed</span>
+        </div>
+        <div class="indicator error-parsing is-hidden">
+            <i class="om-icon om-icon-cancel"></i>
+            <span class="icon-label">Error Parsing</span>
+        </div>
+    </div>
+
+    <div class="save disabled">
+        <span class="icon-label">Submit</span>
+        <i class="om-icon om-icon-right-open"></i>
     </div>
 </nav>
 

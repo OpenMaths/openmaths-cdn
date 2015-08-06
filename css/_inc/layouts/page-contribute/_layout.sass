@@ -1,0 +1,91 @@
+$contribute-controls-height: $quadruple-unit-layout
+
+.page-contribute
+  nav#contribute-controls
+    +clearfix
+
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    height: $contribute-controls-height
+    background: $color-grey-900
+
+    .status
+      +clearfix
+
+      padding: 0 $half-unit-layout
+      float: left
+
+      &.passing
+        float: right
+
+      .indicator
+        +icon-expand(rem(30px), rem(12px), rem(14px))
+
+        +transition(color .25s, max-width .25s .25s)
+
+        color: $color-grey-300
+        cursor: pointer
+        float: left
+        height: $contribute-controls-height
+        line-height: $contribute-controls-height
+
+        &.active, &:hover, &:focus
+          max-width: rem(200px)
+
+        &.parsed
+          &.active, &:hover, &:focus
+            color: $color-alert-success
+
+        &.error-parsing
+          &.active, &:hover, &:focus
+            color: $color-alert-error
+
+    .save
+      margin-left: $half-unit-layout
+      cursor: pointer
+      padding: 0 rem(14px) 0 rem(24px)
+      background: $color-black
+      float: right
+      height: $contribute-controls-height
+      line-height: $contribute-controls-height
+      color: $color-green-900
+      background: $color-alert-success
+      font:
+        size: rem(15px)
+
+      &.disabled
+        background: transparent
+        color: $color-grey-300
+        cursor: not-allowed
+
+        +hover
+          +animation(none)
+
+      .om-icon
+        position: relative
+        top: 2px
+        font:
+          size: rem(18px)
+
+      +hover
+        +animation(pulse .25s)
+
+  main#ide
+    +clearfix
+
+    width: 100%
+    background: white
+    top: 0
+    bottom: $contribute-controls-height
+    position: absolute
+
+    #editor, #preview
+      float: left
+      width: 50%
+      height: 100%
+      
+    #preview
+      border-left: 1px solid $color-grey-100
+      background: white

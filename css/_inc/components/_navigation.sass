@@ -1,6 +1,7 @@
-nav
+$nav-primary-height: $quadruple-unit-layout
+
+nav#primary
   $icon-size: $double-unit-layout
-  $nav-height: $quadruple-unit-layout
 
   +z-index(nav)
   +clearfix
@@ -11,14 +12,17 @@ nav
   top: 0
   left: 0
   display: block
-  height: $nav-height
+  height: $nav-primary-height
   background: white
   border-bottom: 1px solid $color-grey-100
+
+  &.no-border
+    border-bottom: 0
 
   &.hidden
     +transition(top .25s)
 
-    top: -($nav-height)
+    top: -($nav-primary-height)
 
     .ui-show-nav
       display: block
@@ -30,14 +34,14 @@ nav
         opacity: 0
 
   .logo
-    width: $nav-height
-    height: $nav-height
+    width: $nav-primary-height
+    height: $nav-primary-height
     display: block
     position: absolute
     overflow: hidden
     left: 50%
     top: 0
-    margin-left: -($nav-height / 2)
+    margin-left: -($nav-primary-height / 2)
     background:
       color: transparent
       repeat: no-repeat
@@ -76,8 +80,8 @@ nav
         display: block
         color: inherit
         position: relative
-        height: $nav-height
-        line-height: $nav-height
+        height: $nav-primary-height
+        line-height: $nav-primary-height
         text-decoration: none
 
         .om-icon
