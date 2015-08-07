@@ -11,7 +11,7 @@
 <!--@TODO-->
 <!--Update from board layout-->
 
-<nav id="primary" class="hidden">
+<nav id="primary">
     <ul>
         <li ui-sref-active="active">
             <a href ui-sref="explore">
@@ -62,10 +62,69 @@
 
 <main id="ide">
     <div id="editor">
-        <div class="controls"></div>
+        <form action="">
+            <div class="form-control open">
+                <label>
+                    <i class="om-icon om-icon-fontsize"></i>
+                    <span>Contribution title</span>
+                </label>
+
+                <div class="input-holder">
+                    <input type="text" placeholder="The title that will appear when searching"/>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label>
+                    <i class="om-icon om-icon-flow-branch"></i>
+                    <span>Contribution category</span>
+                </label>
+
+                <div class="input-holder">
+                    <select name="">
+                        <option value="">Choose</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-control content">
+                <label>
+                    <i class="om-icon om-icon-keyboard"></i>
+                    <span>Content</span>
+                </label>
+
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="form-control">
+                <label>
+                    <i class="om-icon om-icon-flow-cascade"></i>
+                    <span>Prerequisite definitions</span>
+                </label>
+
+                <div class="input-holder">
+                    <input type="text" placeholder="The title that will appear when searching"/>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label>
+                    <i class="om-icon om-icon-tag-1"></i>
+                    <span>Tags</span>
+                </label>
+
+                <div class="input-holder">
+                    <input type="text" placeholder="The title that will appear when searching"/>
+                </div>
+            </div>
+        </form>
+
+        <div class="editor">
+
+        </div>
     </div>
     <div id="preview">
-        <div class="controls"></div>
+
     </div>
 </main>
 
@@ -90,7 +149,7 @@
         </div>
     </div>
 
-    <div class="save disabled">
+    <div class="save">
         <span class="icon-label">Submit</span>
         <i class="om-icon om-icon-right-open"></i>
     </div>

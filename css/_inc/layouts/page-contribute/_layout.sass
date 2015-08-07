@@ -1,6 +1,8 @@
 $contribute-controls-height: $quadruple-unit-layout
 
 .page-contribute
+  min-height: 100vh
+
   nav#contribute-controls
     +clearfix
 
@@ -25,13 +27,14 @@ $contribute-controls-height: $quadruple-unit-layout
 
         +transition(color .25s, max-width .25s .25s)
 
-        color: $color-grey-300
+        color: $color-grey-200
         cursor: pointer
         float: left
         height: $contribute-controls-height
         line-height: $contribute-controls-height
 
         &.active, &:hover, &:focus
+          color: white
           max-width: rem(200px)
 
         &.parsed
@@ -53,7 +56,8 @@ $contribute-controls-height: $quadruple-unit-layout
       color: $color-green-900
       background: $color-alert-success
       font:
-        size: rem(15px)
+        size: rem(14px)
+        family: $ff-meslo
 
       &.disabled
         background: transparent
@@ -62,6 +66,10 @@ $contribute-controls-height: $quadruple-unit-layout
 
         +hover
           +animation(none)
+
+      .icon-label
+        position: relative
+        top: 1px
 
       .om-icon
         position: relative
@@ -77,15 +85,105 @@ $contribute-controls-height: $quadruple-unit-layout
 
     width: 100%
     background: white
-    top: 0
+    top: $nav-primary-height
     bottom: $contribute-controls-height
     position: absolute
 
     #editor, #preview
-      float: left
+      position: absolute
       width: 50%
       height: 100%
-      
+      // @TODO replace with awesome scroll
+      overflow-y: auto
+
+    #editor
+      left: 0
+
+      form
+        $label-height: rem(40px)
+        $label-height-open: rem(58px)
+
+        .form-control
+          +transition(height .25s)
+
+          width: 100%
+          background: $color-grey-50
+          position: relative
+          border-bottom: 1px solid white
+          height: $label-height
+
+          &:last-of-type
+            border-bottom: 1px solid $color-grey-50
+
+          &.content
+            height: auto
+
+          &.open
+            height: $label-height-open
+
+            .input-holder
+              opacity: 1
+              display: block
+
+            label
+              height: $label-height-open
+              line-height: $label-height-open
+
+              span
+                opacity: 0
+
+          label
+            cursor: pointer
+            padding: 0 ($label-height / 3)
+            display: block
+            height: $label-height
+            line-height: $label-height
+            font:
+              family: $ff-meslo
+              size: rem(10px)
+
+            span
+              padding-left: rem(2px)
+
+            .om-icon
+              font:
+                size: rem(14px)
+
+          .input-holder
+            +transition(opacity .25s)
+
+            display: none
+            opacity: 0
+            margin-top: -($label-height / 2)
+            padding-left: rem(44px)
+            position: absolute
+            left: 0
+            top: 50%
+            width: 100%
+
+          input, select, textarea
+            +border-radius(0)
+            +box-shadow(none)
+
+            width: 100%
+            border: 0
+            display: block
+            box-sizing: border-box
+
+          input, select
+            +transition(opacity .25s)
+
+            height: $label-height
+            padding: 0
+            background: transparent
+            font:
+              size: rem(13px)
+
+          textarea
+            min-height: rem(300px)
+            padding: $base-unit-layout
+
     #preview
+      right: 0
       border-left: 1px solid $color-grey-100
       background: white
