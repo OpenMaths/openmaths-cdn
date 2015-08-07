@@ -1,0 +1,57 @@
+.page-contribute
+  .search-results
+    @extend .unstyled
+    +z-index(contribute-form-search-results)
+
+    top: 100%
+    position: absolute
+    background: white
+    width: 100%
+    border-bottom: 1px solid $color-grey-100
+
+    li
+      +transition(background .25s)
+
+      cursor: pointer
+      position: relative
+      padding: rem(14px) $base-unit-layout
+      border-bottom: 1px solid $color-grey-50
+      
+      +hover
+        background: $color-grey-25
+
+        //strong
+        //  font:
+        //    weight: 700
+
+      &:last-of-type
+        border-bottom: 0
+
+      strong
+        display: block
+        font:
+          size: rem(13px)
+          weight: 500
+
+      .label
+        position: absolute
+        right: $base-unit-layout
+        padding: 0 $half-unit-layout
+        height: rem(20px)
+        line-height: rem(20px)
+        margin-top: -(rem(20px) / 2)
+        top: 50%
+        border: 0
+        background: $color-black
+        color: white
+        font:
+          size: rem(10px)
+
+
+      .details
+        display: block
+
+        .label
+          font:
+            style: normal
+            size: rem(10px)
