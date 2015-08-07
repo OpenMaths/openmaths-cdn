@@ -84,29 +84,22 @@ nav#primary
         line-height: $nav-primary-height
         text-decoration: none
 
-        .om-icon
+        .fa
+          margin-right: rem(4px)
           position: relative
-          top: rem(3px)
+          top: rem(2px)
           line-height: 1
           font:
-            size: rem(24px)
+            size: rem(22px)
+
+          &.fa-safari
+            margin-right: rem(2px)
+            top: rem(2px)
+            font:
+              size: rem(21px)
 
       &.active
         color: $color-black
-
-        a
-          .icon
-            &.dive
-              @extend .icon.dive.black
-
-            &.contribute
-              @extend .icon.contribute.black
-
-            &.gear
-              @extend .icon.gear.black
-
-            &.user
-              @extend .icon.user.black
 
     &.actions
       float: right
@@ -174,17 +167,3 @@ nav#primary
 
         &.active
           color: white
-
-          a
-            .icon
-              &.dive
-                @extend .icon.dive.white
-
-              &.contribute
-                @extend .icon.contribute.white
-
-              &.gear
-                @extend .icon.gear.white
-
-              &.user
-                @extend .icon.user.white
