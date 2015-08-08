@@ -3,55 +3,72 @@
     @extend .unstyled
     +z-index(contribute-form-search-results)
 
+    display: none
     top: 100%
     position: absolute
     background: white
     width: 100%
     border-bottom: 1px solid $color-grey-100
+    border-top: 1px solid $color-grey-100
+
+    $preview-icon-size: rem(18px)
+    $category-label-height: rem(20px)
 
     li
       +transition(background .25s)
 
       cursor: pointer
       position: relative
-      padding: rem(14px) $base-unit-layout
-      border-bottom: 1px solid $color-grey-50
-      
-      +hover
+      padding: rem(12px) $base-unit-layout
+
+      &.active, &:hover, &:active
         background: $color-grey-25
 
-        //strong
-        //  font:
-        //    weight: 700
+        .label
+          right: $base-unit-layout + $preview-icon-size
 
-      &:last-of-type
-        border-bottom: 0
+        .fa
+          right: $half-unit-layout
 
       strong
+        +ellipsis()
+
         display: block
         font:
           size: rem(13px)
           weight: 500
 
+      em
+        font:
+          style: normal
+          weight: 700
+
       .label
+        +transition(right .15s)
+
         position: absolute
         right: $base-unit-layout
         padding: 0 $half-unit-layout
-        height: rem(20px)
-        line-height: rem(20px)
-        margin-top: -(rem(20px) / 2)
+        height: $category-label-height
+        line-height: $category-label-height
+        margin-top: -($category-label-height / 2)
         top: 50%
-        border: 0
-        background: $color-black
-        color: white
+        background: white
+        border: 1px solid $color-black
+        color: $color-black
         font:
           size: rem(10px)
 
+      .fa
+        +transition(right .15s)
+        @extend .text-center
 
-      .details
-        display: block
-
-        .label
-          font:
-            style: normal
-            size: rem(10px)
+        position: absolute
+        right: -($preview-icon-size)
+        width: $preview-icon-size
+        height: $preview-icon-size
+        line-height: $preview-icon-size
+        margin-top: -($preview-icon-size / 2)
+        top: 50%
+        font:
+          size: rem(12px)

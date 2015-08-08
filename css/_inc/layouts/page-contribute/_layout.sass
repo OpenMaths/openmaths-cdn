@@ -121,9 +121,16 @@ $contribute-controls-height: $quadruple-unit-layout
           &.open
             height: $label-height-open
 
+            .search-results
+              display: block
+
             .input-holder
               opacity: 1
               display: block
+              height: $label-height-open
+
+              input, select
+                height: $label-height-open
 
             label
               height: $label-height-open
@@ -143,7 +150,7 @@ $contribute-controls-height: $quadruple-unit-layout
               size: rem(10px)
 
             span
-              padding-left: rem(2px)
+              padding-left: rem(5px)
 
             .fa
               position: relative
@@ -156,11 +163,11 @@ $contribute-controls-height: $quadruple-unit-layout
 
             display: none
             opacity: 0
-            margin-top: -($label-height / 2)
+            //margin-top: -($label-height-open / 2)
             padding-left: rem(44px)
             position: absolute
             left: 0
-            top: 50%
+            top: 0
             width: 100%
 
           input, select, textarea
@@ -180,6 +187,10 @@ $contribute-controls-height: $quadruple-unit-layout
             background: transparent
             font:
               size: rem(13px)
+
+          input
+            // @TODO investigate why this happens
+            text-indent: 1px
 
           textarea
             min-height: rem(200px)
