@@ -1,4 +1,4 @@
-.page-explore .row .column .umi
+.umi
   .add-content
     +transition(opacity .25s)
 
@@ -44,6 +44,8 @@
     article
       min-height: 100%
       padding: $double-unit-layout
+      font:
+        family: $ff-meslo
 
       .wrapper
         width: 100%
@@ -64,7 +66,7 @@
         main
           line-height: 1.5
           font:
-            size: rem(14px)
+            size: rem(13px)
 
           h3
             font:
@@ -129,3 +131,18 @@
 
                 &.expand-down
                   bottom: -($arrow-size)
+
+        .additional-info
+          margin-top: $double-unit-layout
+          border-top: 1px solid $color-grey-50
+
+          .info-unit
+            padding-top: $base-unit-layout
+
+            header
+              font:
+                size: rem(12px)
+
+              .fa
+                font:
+                  size: rem(14px)
