@@ -64,7 +64,7 @@
             size: rem(20px)
 
         main
-          line-height: 1.5
+          line-height: 1.7
           font:
             size: rem(13px)
 
@@ -140,9 +140,29 @@
             padding-top: $base-unit-layout
 
             header
+              padding-bottom: $quarter-unit-layout
               font:
                 size: rem(12px)
 
               .fa
                 font:
                   size: rem(14px)
+
+            .label
+              position: relative
+              white-space: nowrap
+              display: inline-block
+              margin-right: $quarter-unit-layout
+              padding-right: $base-unit-layout + rem(2px)
+
+              i
+                position: absolute
+                right: rem(2px)
+                margin-top: -(rem(2px))
+                top: 0
+                padding: $quarter-unit-layout
+                text-decoration: none
+                font:
+                  size: rem(14px)
+                  style: normal
+                  weight: 700
