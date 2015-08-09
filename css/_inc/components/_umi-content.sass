@@ -53,12 +53,14 @@
         .label
           border-color: $color-black
           color: $color-black
+          display: inline-block
+          white-space: nowrap
           font:
-            size: rem(11px)
+            size: rem(12px)
 
         .heading
           margin: 0
-          padding: $base-unit-layout 0
+          padding: ($base-unit-layout - $quarter-unit-layout) 0 $base-unit-layout
           font:
             family: $ff-meslo-bold
             size: rem(20px)
@@ -150,10 +152,10 @@
 
             .label
               position: relative
-              white-space: nowrap
-              display: inline-block
               margin-right: $quarter-unit-layout
               padding-right: $base-unit-layout + rem(2px)
+              font:
+                size: rem(11px)
 
               i
                 position: absolute
