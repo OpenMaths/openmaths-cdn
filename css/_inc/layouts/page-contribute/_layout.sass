@@ -33,15 +33,26 @@ $contribute-controls-height: $quadruple-unit-layout
         height: $contribute-controls-height
         line-height: $contribute-controls-height
 
+        &.hidden
+          display: none
+
+        &.show
+          &.hidden
+            display: block
+
         &.active, &:hover, &:focus
           color: white
           max-width: rem(200px)
 
         &.parsed
+          color: $color-alert-success
+
           &.active, &:hover, &:focus
             color: $color-alert-success
 
         &.error-parsing
+          color: $color-alert-error
+
           &.active, &:hover, &:focus
             color: $color-alert-error
 
