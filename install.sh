@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-sudo npm install gulp npm-check-updates -g
+sudo npm install gulp npm-check-updates tsd typescript -g
 
-ncu -u
-
+sudo ncu -ua
 sudo npm install
+
 bower install
 
 gulp sass
