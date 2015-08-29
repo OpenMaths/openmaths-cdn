@@ -143,6 +143,15 @@ $contribute-controls-height: $quadruple-unit-layout
               input, select
                 height: $label-height-open
 
+              &.formal-meta
+                +clearfix
+
+                padding-top: ($label-height-open / 2) - ($toggle-height / 2)
+
+                .toggle-holder
+                  float: left
+                  margin-right: $base-unit-layout
+
             label
               height: $label-height-open
               line-height: $label-height-open
