@@ -97,6 +97,7 @@ $contribute-controls-height: $quadruple-unit-layout
     width: 100%
     background: white
     top: $nav-primary-height
+    //top: 0
     bottom: $contribute-controls-height
     position: absolute
 
@@ -126,14 +127,18 @@ $contribute-controls-height: $quadruple-unit-layout
           &:last-of-type
             border-bottom: 1px solid $color-grey-50
 
-          &.content
-            height: auto
+          //&.content
+          //  height: auto
 
           &.open
             height: $label-height-open
 
-            //.search-results
-            //  display: block
+            &.content
+              height: auto
+
+              label
+                span
+                  opacity: 1
 
             .input-holder
               opacity: 1
