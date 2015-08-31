@@ -17,6 +17,7 @@ select yn in "Yes" "No"; do
             cp -r css dist/ && rm -r dist/css/_inc
             cp -r fonts dist/
             cp -r images dist/
+            cp index.html dist/
 
 			divshot push staging
 
