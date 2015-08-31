@@ -1,6 +1,6 @@
 {
   "name": "om-static",
-  "root": "dist",
+  "root": "./dist",
   "clean_urls": true,
   "headers": {
     "/css/**": {
@@ -18,9 +18,7 @@
   "exclude": [
     ".*",
     "*.sh",
-    "css",
-    "fonts",
-    "images",
+    "*.tar.gz",
     "bower_components",
     "node_modules",
     "bower.json",
