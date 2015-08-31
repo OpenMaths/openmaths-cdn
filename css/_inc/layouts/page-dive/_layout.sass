@@ -5,7 +5,6 @@
 
   .dive-view-port
     +transition(top .5s linear)
-    //transition-delay: .25s
 
     display: table
     top: 0
@@ -38,6 +37,7 @@
     +z-index(dive-actions)
     +transition(padding-top .25s)
 
+    overflow-y: auto
     display: table-cell
     vertical-align: middle
     position: relative
@@ -56,19 +56,19 @@
         width: 100%
         display: block
         font:
-          size: rem(68px)
+          size: rem(60px)
 
         +placeholder
           color: $text-color-light
 
     .search-results
       position: relative
-      margin: 0 auto
+      margin: $double-unit-layout auto 0
       padding: 0
       list-style: none
-      width: rem(600px)
+      max-width: rem(600px)
       // 5 results
-      max-height: rem(90px) * 5
+      max-height: rem(80px) * 5
 
       li
         +transition(color .25s)
@@ -76,6 +76,11 @@
         cursor: pointer
         color: $text-color
         padding: $double-half-unit-layout 0 0
+        font:
+          family: $ff-meslo
+
+        &:first-of-type
+          padding: 0
 
         &.active,
         &:hover,
@@ -93,8 +98,12 @@
           padding: 0 0 $quarter-unit-layout
           display: block
           font:
-            size: rem(22px)
-        //weight: 500
+            size: rem(18px)
+            weight: 500
+
+          mark
+            font:
+              family: $ff-meslo-bold
 
         .details
           +clearfix
@@ -111,8 +120,9 @@
             border: 0
             float: right
             font:
+              family: $ff-meslo
               style: normal
-              size: rem(14px)
+              size: rem(12px)
 
           small.label
             float: left

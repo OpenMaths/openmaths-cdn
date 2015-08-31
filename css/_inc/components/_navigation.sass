@@ -109,6 +109,16 @@ nav#primary
           a
             max-width: rem(200px)
 
+        &.user
+          span
+            cursor: default
+            display: block
+            color: $color-black
+            height: $nav-primary-height
+            line-height: $nav-primary-height
+            font:
+              size: rem(12px)
+
         a
           +icon-expand(rem(24px), rem(12px), rem(16px))
       
@@ -167,3 +177,9 @@ nav#primary
 
         &.active
           color: white
+
+      &.actions
+        li
+          &.user
+            span
+              color: white

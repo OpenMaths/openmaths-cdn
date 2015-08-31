@@ -22,16 +22,10 @@
 
       cursor: pointer
       position: relative
-      padding: rem(12px) $base-unit-layout
+      padding: rem(15px) $base-unit-layout
 
       &.active, &:hover, &:active
         background: $color-grey-25
-
-        .label
-          right: $base-unit-layout + $preview-icon-size
-
-        .fa
-          right: $half-unit-layout
 
       strong
         +ellipsis()
@@ -66,17 +60,3 @@
         color: $color-black
         font:
           size: rem(10px)
-
-      .fa
-        +transition(right .15s)
-        @extend .text-center
-
-        position: absolute
-        right: -($preview-icon-size)
-        width: $preview-icon-size
-        height: $preview-icon-size
-        line-height: $preview-icon-size
-        margin-top: -($preview-icon-size / 2)
-        top: 50%
-        font:
-          size: rem(12px)
