@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 printf "\n\n\nDo you wish to release to staging?\n\n"
 
 select yn in "Yes" "No"; do
@@ -11,8 +12,8 @@ select yn in "Yes" "No"; do
             rm -r dist
             mkdir dist
 
-			tar -v -cf open-maths-static.tar.gz css/ fonts/ images/ .gitignore bower.json gulpfile.js index.html package.json
-            mv open-maths-static.tar.gz dist/open-maths-static.tar.gz
+			tar -v -cf openmaths-cdn.tar css/* fonts/* images/* .gitignore bower.json gulpfile.js index.html package.json
+            mv openmaths-cdn.tar dist/openmaths-cdn.tar
 
             cp -r css dist/ && rm -r dist/css/_inc
             cp -r fonts dist/
