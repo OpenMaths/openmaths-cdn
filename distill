@@ -1,0 +1,27 @@
+#!/bin/bash
+
+printf "\n\n\nDo you wish to distill openmaths-cdn?\n\n"
+
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes )
+			gulp sass
+
+            rm -r dist
+            mkdir dist
+
+            tar -v -cf openmaths-cdn.tar css/* fonts/* images/* .gitignore bower.json gulpfile.js index.html package.json
+
+            cp -r css dist/ && rm -r dist/css/_inc
+            cp -r fonts dist/
+            cp -r images dist/
+            cp index.html dist/
+
+			printf "\n\n\nopenmaths-cdn successfully distilled\n\n"
+
+			break;;
+		No )
+			printf "\n\n\nOk, maybe next time :-)\n\n"
+			break;;
+	esac
+done

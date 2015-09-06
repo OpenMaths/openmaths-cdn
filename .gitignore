@@ -1,14 +1,15 @@
+.DS_Store
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
 .*-cache
 .idea
 
 bower_components
 node_modules
 
-.DS_Store
-.Spotlight-V100
-.Trashes
-Thumbs.db
+/dist
 
 *.css
-
-/dist
+*.tar
