@@ -12,3 +12,5 @@ Web app dependencies
 
     gsutil acl set public-read gs://static.openmaths.io
     gsutil -m acl set -R -a public-read gs://static.openmaths.io
+    
+    gsutil cors set cors.json gs://static.openmaths.io
