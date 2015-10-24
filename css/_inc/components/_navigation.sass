@@ -166,6 +166,9 @@ nav#primary
       background: $color-black
       margin-top: $base-unit-layout
       position: relative
+      
+      .dark &
+        background: white
 
       i
         position: absolute
@@ -175,6 +178,9 @@ nav#primary
         display: block
         height: 1px
         background: white
+        
+        .dark &
+          background: $color-black
 
         &:first-of-type
           top: 35%

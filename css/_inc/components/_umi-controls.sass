@@ -34,6 +34,8 @@
           color: $color-black
           background: white
 
+          display: none
+
           +hover
             background: $color-green
 
@@ -51,6 +53,10 @@
       line-height: $double-unit-layout
       background: $color-black
       color: white
+
+      .dark &
+        background: white
+        color: $color-black
 
       .icon-label
         padding-right: $half-unit-layout

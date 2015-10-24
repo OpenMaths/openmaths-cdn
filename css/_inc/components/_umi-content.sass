@@ -41,6 +41,9 @@
     width: 100%
     height: 100%
 
+    .dark &
+      color: $color-grey-500
+
     &.error
       article .wrapper main
         color: $color-red
@@ -61,6 +64,10 @@
           white-space: nowrap
           font:
             size: rem(12px)
+
+          .dark &
+            color: $color-grey-500
+            border-color: $color-grey-500
 
         .heading
           margin: 0
@@ -144,6 +151,9 @@
         .additional-info
           margin-top: $double-unit-layout
           border-top: 1px solid $color-grey-50
+
+          .dark &
+            border-top-color: $color-grey-800
 
           .info-unit
             padding-top: $base-unit-layout
