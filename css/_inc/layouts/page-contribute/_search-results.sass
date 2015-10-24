@@ -11,6 +11,11 @@
     border-bottom: 1px solid $color-grey-100
     border-top: 1px solid $color-grey-100
 
+    .dark &
+      background: $color-black
+      border-bottom-color: $color-grey-800
+      border-top-color: $color-grey-800
+
     &.show
       display: block
 
@@ -27,6 +32,9 @@
       &.active, &:hover, &:active
         background: $color-grey-25
 
+        .dark &
+          background: $color-grey-800
+
       strong
         +ellipsis()
 
@@ -35,6 +43,9 @@
           family: $ff-meslo
           size: rem(11px)
           weight: 500
+
+        .dark &
+          color: $color-grey-100
 
         mark
           font:
@@ -60,3 +71,8 @@
         color: $color-black
         font:
           size: rem(10px)
+
+        .dark &
+          background: $color-black
+          color: $color-grey-100
+          border-color: $color-grey-100

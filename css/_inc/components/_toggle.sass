@@ -15,6 +15,9 @@ $toggle-height: $base-unit-layout
       family: $ff-meslo
       size: rem(11px)
 
+    .dark &
+      color: $color-grey-500
+
   .toggle
     +border-radius(8px)
 
@@ -25,6 +28,9 @@ $toggle-height: $base-unit-layout
     border: 1px solid $color-black
     padding: $quarter-unit-layout / 2
 
+    .dark &
+      border-color: $color-grey-500
+
     &:before
       +border-radius(100%)
       +transition(margin .25s)
@@ -34,6 +40,9 @@ $toggle-height: $base-unit-layout
       width: $base-unit-layout - $quarter-unit-layout - rem(2px)
       height: $toggle-height - $quarter-unit-layout - rem(2px)
       background: $color-black
+
+      .dark &
+        background: $color-grey-500
 
     &.active
       &:before
