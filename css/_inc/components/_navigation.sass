@@ -16,6 +16,10 @@ nav#primary
   background: white
   border-bottom: 1px solid $color-grey-100
 
+  .dark &
+    background: $color-black
+    border-bottom-color: $color-grey-800
+
   &.no-border
     border-bottom: 0
 
@@ -49,6 +53,10 @@ nav#primary
       size: $triple-unit-layout
       image: url('/images/logo/glyph-black.svg')
 
+    .dark &
+      background:
+        image: url('/images/logo/glyph-white.svg')
+
     strong
       opacity: 0
 
@@ -66,6 +74,9 @@ nav#primary
       float: left
       padding: 0 $half-unit-layout
 
+      .dark &
+        color: $color-grey-500
+
       &:first-of-type
         padding-left: 0
 
@@ -74,6 +85,9 @@ nav#primary
 
       +hover
         color: $color-black
+
+        .dark &
+          color: $color-grey-100
 
       a
         font-size: rem(15px)
@@ -101,6 +115,9 @@ nav#primary
       &.active
         color: $color-black
 
+        .dark &
+          color: $color-grey-100
+
     &.actions
       float: right
 
@@ -118,6 +135,9 @@ nav#primary
             line-height: $nav-primary-height
             font:
               size: rem(12px)
+
+            .dark &
+              color: $color-grey-100
 
         a
           +icon-expand(rem(24px), rem(12px), rem(16px))

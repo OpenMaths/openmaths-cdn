@@ -3,6 +3,9 @@ $contribute-controls-height: $quadruple-unit-layout
 .page-contribute
   min-height: 100vh
 
+  .dark &
+    background: $color-black
+
   nav#contribute-controls
     +clearfix
 
@@ -12,6 +15,9 @@ $contribute-controls-height: $quadruple-unit-layout
     width: 100%
     height: $contribute-controls-height
     background: $color-grey-900
+
+    .dark &
+      background: white
 
     .status
       +clearfix
@@ -33,6 +39,9 @@ $contribute-controls-height: $quadruple-unit-layout
         height: $contribute-controls-height
         line-height: $contribute-controls-height
 
+        .dark &
+          color: $color-black
+
         &.hidden
           display: none
 
@@ -43,6 +52,9 @@ $contribute-controls-height: $quadruple-unit-layout
         &.active, &:hover, &:focus
           color: white
           max-width: rem(200px)
+
+          .dark &
+            color: $color-black
 
         &.parsed
           color: $color-alert-success
@@ -97,9 +109,11 @@ $contribute-controls-height: $quadruple-unit-layout
     width: 100%
     background: white
     top: $nav-primary-height
-    //top: 0
     bottom: $contribute-controls-height
     position: absolute
+    
+    .dark &
+      background: $color-black
 
     #editor, #preview
       position: absolute
@@ -124,11 +138,15 @@ $contribute-controls-height: $quadruple-unit-layout
           border-bottom: 1px solid white
           height: $label-height
 
+          .dark &
+            background: $color-grey-900
+            border-bottom-color: $color-grey-800
+
           &:last-of-type
             border-bottom: 1px solid $color-grey-50
 
-          //&.content
-          //  height: auto
+            .dark &
+              border-bottom-color: $color-grey-800
 
           &.open
             height: $label-height-open
@@ -174,6 +192,9 @@ $contribute-controls-height: $quadruple-unit-layout
               family: $ff-meslo
               size: rem(10px)
 
+            .dark &
+              color: $color-grey-500
+
             span
               padding-left: rem(5px)
 
@@ -204,6 +225,12 @@ $contribute-controls-height: $quadruple-unit-layout
             display: block
             box-sizing: border-box
 
+            .dark &
+              color: $color-grey-100
+
+              +placeholder
+                color: $color-grey-800
+
           input, select
             +transition(opacity .25s)
 
@@ -218,10 +245,16 @@ $contribute-controls-height: $quadruple-unit-layout
             text-indent: 1px
 
           textarea
+            background: transparent
             min-height: rem(200px)
             padding: $base-unit-layout
+
+            .dark &
+              border-top: 1px solid $color-grey-800
 
     #preview
       right: 0
       border-left: 1px solid $color-grey-100
-      background: white
+
+      .dark &
+        border-left-color: $color-grey-800
