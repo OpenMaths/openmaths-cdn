@@ -159,6 +159,11 @@
   &:active
     cursor: grabbing
 
+  &.disabled
+    +animation(none)
+
+    cursor: pointer
+
 .umi-additional-info
   margin-top: $double-unit-layout
   border-top: 1px solid $color-grey-50
