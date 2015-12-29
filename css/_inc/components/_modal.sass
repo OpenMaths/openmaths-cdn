@@ -1,4 +1,4 @@
-$modal-header-font-size: $base-unit-font-size
+$modal-header-font-size: rem(20px)
 
 .modal-backdrop
   +z-index(modal-backdrop)
@@ -9,7 +9,7 @@ $modal-header-font-size: $base-unit-font-size
   position: fixed
   width: 100%
   height: 100%
-  background: rgba(0, 0, 0, .8)
+  background: rgba(0, 0, 0, .85)
   overflow-y: auto
 
   &.open
@@ -20,16 +20,18 @@ $modal-header-font-size: $base-unit-font-size
 
     margin: ($quadruple-unit-layout * 2) auto
     width: 100%
-    max-width: rem(650px)
+    max-width: rem(700px)
     background: white
 
-    header,
-    main,
-    footer
+    > header,
+    > main,
+    > footer
       margin: 0
       padding: $double-half-unit-layout
+      font:
+        family: $ff-meslo
 
-    header
+    > header
       position: relative
       border-bottom: 1px solid $color-grey-50
 
@@ -50,9 +52,10 @@ $modal-header-font-size: $base-unit-font-size
 
       .heading
         font:
+          family: $ff-meslo-bold
           size: $modal-header-font-size
 
-    footer
+    > footer
       border-top: 1px solid $color-grey-50
 
       &.btn
@@ -65,5 +68,33 @@ $modal-header-font-size: $base-unit-font-size
           background: $color-red
           color: white
 
-    main
-      background: $color-grey-50
+    > main
+      background: $color-grey-25
+
+      &#umi-detail-controls
+        +clearfix
+
+        background: transparent
+        padding: 0
+
+        > .content
+          position: relative
+          background: $color-grey-25
+
+          .umi
+            position: absolute
+            width: 100%
+            height: 100%
+
+        > .controls
+          border-left: 1px solid $color-grey-50
+          background: $color-grey-25
+          padding: $double-unit-layout
+
+          button
+            display: block
+            width: 100%
+            margin: 0 0 $half-unit-layout
+
+            &:last-of-type
+              margin-bottom: 0

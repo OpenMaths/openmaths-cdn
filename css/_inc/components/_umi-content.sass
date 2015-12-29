@@ -94,12 +94,8 @@
 
             position: relative
             white-space: nowrap
-            cursor: grab
             font:
               weight: 700
-
-            &:active
-              cursor: grabbing
 
             .expand
               +z-index(expand-umi-arrow)
@@ -155,41 +151,61 @@
                 &.expand-down
                   bottom: -($arrow-size)
 
-        .additional-info
-          margin-top: $double-unit-layout
-          border-top: 1px solid $color-grey-50
+.expand-umi
+  +animation(pulse-small 2s linear infinite)
 
-          .dark &
-            border-top-color: $color-grey-800
-            color: $color-grey-500
+  cursor: grab
 
-          .info-unit
-            padding-top: $base-unit-layout
+  &:active
+    cursor: grabbing
 
-            header
-              padding-bottom: $quarter-unit-layout
-              font:
-                size: rem(12px)
+.umi-additional-info
+  margin-top: $double-unit-layout
+  border-top: 1px solid $color-grey-50
+  color: $color-black
 
-              .fa
-                font:
-                  size: rem(14px)
+  .dark &
+    border-top-color: $color-grey-800
+    color: $color-grey-500
 
-            .label
-              position: relative
-              margin-right: $quarter-unit-layout
-              padding-right: $base-unit-layout + rem(2px)
-              font:
-                size: rem(11px)
+  .info-unit
+    padding-top: $base-unit-layout
 
-              i
-                position: absolute
-                right: rem(2px)
-                margin-top: -(rem(2px))
-                top: 0
-                padding: $quarter-unit-layout
-                text-decoration: none
-                font:
-                  size: rem(14px)
-                  style: normal
-                  weight: 700
+    header
+      padding-bottom: $quarter-unit-layout
+      font:
+        size: rem(12px)
+
+      .fa
+        font:
+          size: rem(14px)
+
+    .label
+      color: $color-black
+      border-color: $color-black
+      position: relative
+      margin-right: $quarter-unit-layout
+      padding-right: $base-unit-layout + rem(2px)
+      font:
+        size: rem(11px)
+
+      .dark &
+        color: $color-grey
+        border-color: $color-grey
+
+      i
+        position: absolute
+        right: rem(2px)
+        margin-top: -(rem(2px))
+        top: 0
+        padding: $quarter-unit-layout
+        text-decoration: none
+        font:
+          size: rem(14px)
+          style: normal
+          weight: 700
+
+  &.no-controls
+    .info-unit
+      .label
+        padding-right: $half-unit-layout
