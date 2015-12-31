@@ -42,7 +42,7 @@
     height: 100%
 
     .dark &
-      color: $color-grey-100
+      color: $color-grey-200
 
     &.error
       article .wrapper main
@@ -179,6 +179,11 @@
     border-top-color: $color-grey-800
     color: $color-grey-500
 
+    .info-unit
+      .label
+        color: $color-grey-500 !important
+        border-color: $color-grey-500 !important
+
   .info-unit
     padding-top: $base-unit-layout
 
@@ -199,10 +204,6 @@
       padding-right: $base-unit-layout + rem(2px)
       font:
         size: rem(11px)
-
-      .dark &
-        color: $color-grey
-        border-color: $color-grey
 
       i
         position: absolute
