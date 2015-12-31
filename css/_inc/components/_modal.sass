@@ -1,4 +1,4 @@
-$modal-header-font-size: rem(20px)
+$modal-header-font-size: rem(18px)
 
 .modal-backdrop
   +z-index(modal-backdrop)
@@ -37,7 +37,7 @@ $modal-header-font-size: rem(20px)
 
     > header
       position: relative
-      border-bottom: 1px solid $color-grey-50
+      border-bottom: 1px solid $color-grey-100
 
       .dark &
         border-bottom-color: $color-grey-800
@@ -100,25 +100,43 @@ $modal-header-font-size: rem(20px)
             height: 100%
 
         > .controls
-          border-left: 1px solid $color-grey-50
-          background: $color-grey-25
+          border-left: 1px solid $color-grey-100
+          background: $color-grey-50
           padding: $double-unit-layout
 
           .dark &
             border-left-color: $color-grey-800
             background: $color-black
 
-          button
-            display: block
-            width: 100%
-            margin: 0 0 $half-unit-layout
+          .info
+            font:
+              size: rem(12px)
 
-            &:last-of-type
-              margin-bottom: 0
+            hr
+              margin: $base-unit-layout 0
+
+              .dark &
+                border-top-color: $color-grey-800
+
+            span
+              +ellipsis()
+
+              margin: 0 0 $half-unit-layout
+              display: block
+
+              &.link
+                color: inherit
+
+              &:last-of-type
+                margin-bottom: 0
 
     .umi-additional-info
       margin-top: 0
       padding: $double-unit-layout
+      border-top-color: $color-grey-100
+
+      .dark &
+        border-top-color: $color-grey-800
 
       .info-unit
         &:first-of-type
