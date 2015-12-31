@@ -34,14 +34,16 @@
           color: $color-black
           background: white
 
-          display: none
+          .icon-label
+            position: relative
+            top: -1px
 
           +hover
-            background: $color-green
+            background: $color-green-300
 
           &.downvote
             +hover
-              background: $color-red
+              background: $color-red-300
 
     .controls
       +icon-expand($double-unit-layout, rem(12px), rem(15px), 0)

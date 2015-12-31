@@ -31,7 +31,7 @@ nav#primary
     .ui-show-nav
       display: block
 
-    +hover
+    &.visible, &:hover
       top: 0
 
       .ui-show-nav
@@ -141,7 +141,7 @@ nav#primary
 
         a
           +icon-expand(rem(24px), rem(12px), rem(16px))
-      
+
           .icon-label
             padding-left: rem(28px)
 
@@ -166,7 +166,7 @@ nav#primary
       background: $color-black
       margin-top: $base-unit-layout
       position: relative
-      
+
       .dark &
         background: white
 
@@ -178,7 +178,7 @@ nav#primary
         display: block
         height: 1px
         background: white
-        
+
         .dark &
           background: $color-black
 
