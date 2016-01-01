@@ -20,6 +20,21 @@
     +clearfix
 
     border-bottom: 1px solid $color-grey-100
+    // @TODO until resolved
+    //min-height: rem(220px)
+
+    .resize-row
+      +z-index(resize-row)
+
+      // @TODO until resolved
+      display: none
+
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 100%
+      height: rem(8px)
+      cursor: row-resize
 
     .dark &
       border-bottom-color: $color-grey-800
