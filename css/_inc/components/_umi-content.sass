@@ -55,9 +55,19 @@
       font:
         family: $ff-meslo
 
+      .traditional &
+        font:
+          family: $ff-traditional
+
       strong, b
         font:
+          weight: 500
           family: $ff-meslo-bold
+
+        .traditional &
+          font:
+            weight: 700
+            family: $ff-traditional
 
       .wrapper
         width: 100%
@@ -83,15 +93,29 @@
             // Safari normalisation
             weight: 500
 
+          .traditional &
+            font:
+              size: rem(24px)
+              weight: 700
+              family: $ff-traditional
+
         main
           line-height: 1.7
-          //white-space: pre-line
           font:
             size: rem(13px)
+
+          .traditional &
+            font:
+              size: rem(15px)
 
           h3
             font:
               size: rem(18px)
+
+            .traditional &
+              font:
+                family: $ff-traditional
+                size: rem(20px)
 
           .expand-umi
             +z-index(expand-umi)
