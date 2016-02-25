@@ -1,1 +1,57 @@
 @import page-board/layout
+
+$column-numbers: 12
+
+.grid
+  border: 1px dashed red
+  position: relative
+  height: 100%
+
+  &.parent
+    height: 100vh
+
+  .controls
+    position: absolute
+    left: $base-unit-layout
+    top: $base-unit-layout
+    font:
+      size: rem(12px)
+
+    strong
+      background: red
+      padding: 2px
+      cursor: pointer
+      display: inline-block
+      margin-right: $half-unit-layout
+
+  .row
+    +clearfix
+
+    height: 100%
+    background: #ddd
+    border-bottom: 1px dotted blue
+
+    &:last-of-type
+      border-bottom: 0
+
+    .column
+      position: relative
+      height: 100%
+      background: #eee
+      border-right: 1px dotted blue
+
+      &:last-of-type
+        border-right: 0
+
+      .umi
+        background: white
+
+@for $i from 1 through $column-numbers
+  .columns-#{$i}
+    > .column
+      float: left
+      width: (100% / $i)
+
+  .rows-#{$i}
+    > .row
+      height: (100% / $i)
