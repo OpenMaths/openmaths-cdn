@@ -11,19 +11,21 @@ $column-numbers: 12
     height: 100vh
 
   .controls-boundaries
-    $size: $base-unit-layout + $half-unit-layout
+    $size: $base-unit-layout + $base-unit-layout
     $hidden: $base-unit-layout
 
     +transition(all .25s)
-    +z-index(column-controls)
+    +z-index(column-controls-boundaries)
     @extend .text-center
 
     cursor: pointer
     position: absolute
     display: table
-    background: #2c3e50
-    color: white
+    background: transparent
+    color: #2ecc71
     opacity: 0
+    font:
+      size: rem(18px)
 
     +hover
       opacity: 1
@@ -74,12 +76,31 @@ $column-numbers: 12
     +z-index(column-controls)
 
     top: $half-unit-layout
-    left: $half-unit-layout + $quarter-unit-layout
+    left: $base-unit-layout
     position: absolute
-    //background: $color-grey-50
+
+    &.center
+      display: table
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+
+      .controls-expandable-table-wrapper
+        @extend .text-center
+
+        display: table-cell
+        vertical-align: middle
+
+        .control
+          display: inline-block
+          margin: 0 $half-unit-layout 0 0
+
+          &:last-of-type
+            margin: 0
 
     .control
-      +icon-expand-circle(rem(24px), rem(10px), rem(13px))
+      +icon-expand-circle($double-unit-layout, rem(12px), rem(14px))
 
       margin-top: $half-unit-layout
       background: #2ecc71
@@ -131,7 +152,7 @@ $column-numbers: 12
 
           padding: $double-unit-layout
           padding-top: $base-unit-layout
-          padding-left: $double-unit-layout + $base-unit-layout
+          padding-left: $double-unit-layout + $base-unit-layout + $base-unit-layout
           font:
             family: $ff-roboto-mono
 
@@ -154,6 +175,7 @@ $column-numbers: 12
             font:
               family: $ff-roboto-mono
               size: rem(10px)
+              weight: 400
 
           .heading
             display: block
@@ -162,7 +184,6 @@ $column-numbers: 12
             font:
               family: $ff-roboto-mono
               size: rem(18px)
-              // Safari normalisation
               weight: 700
 
           main
