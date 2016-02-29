@@ -3,7 +3,6 @@
 $column-numbers: 12
 
 .grid
-  //border: 1px dashed $color-grey-50
   position: relative
   height: 100%
 
@@ -21,7 +20,7 @@ $column-numbers: 12
     cursor: pointer
     position: absolute
     display: table
-    background: transparent
+    background: rgba(255, 255, 255, .9)
     color: #2ecc71
     opacity: 0
     font:
@@ -40,14 +39,12 @@ $column-numbers: 12
       left: 0
 
       &.top
-        //+transition(top .25s)
         top: -($hidden)
 
         +hover
           top: 0
 
       &.bottom
-        //+transition(bottom .25s)
         bottom: -($hidden)
 
         +hover
@@ -59,14 +56,12 @@ $column-numbers: 12
       top: 0
 
       &.right
-        //+transition(right .25s)
         right: -($hidden)
 
       +hover
         right: 0
 
       &.left
-        //+transition(left .25s)
         left: -($hidden)
 
         +hover
@@ -78,11 +73,13 @@ $column-numbers: 12
     top: $half-unit-layout
     left: $base-unit-layout
     position: absolute
+    height: 100%
 
     &.center
+      +z-index(column-controls-center)
+
       display: table
       width: 100%
-      height: 100%
       left: 0
       top: 0
 
@@ -95,6 +92,9 @@ $column-numbers: 12
         .control
           display: inline-block
           margin: 0 $half-unit-layout 0 0
+
+          &.insert
+            +animation(pulse 2s linear infinite)
 
           &:last-of-type
             margin: 0
