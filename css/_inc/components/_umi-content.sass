@@ -179,10 +179,14 @@
                 &.expand-down
                   bottom: -($arrow-size)
 
-.expand-umi
+.expand-umi, [expand-umi]
   +animation(pulse-small 2s linear infinite)
 
+  display: inline-block
   cursor: grab
+  position: relative
+  font:
+    weight: 700
 
   &:active
     cursor: grabbing

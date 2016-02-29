@@ -1,29 +1,32 @@
-var autoprefixer = require('gulp-autoprefixer'),
+const
+    autoprefixer = require('gulp-autoprefixer'),
+    cors = require('cors'),
     express = require('express'),
     gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     notify = require('gulp-notify'),
+    path = require('path'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass');
 
-gulp.task('staticServer', function () {
-    var server = express(),
-        port = 8089;
+const port = process.env.PORT ? process.env.PORT : 8082;
+const app = express();
 
-    server.use(function (req, res, next) {
-        res.setHeader('Access-Control-Allow-Origin', 'http://om.dev');
-        next();
+gulp.task('server', function () {
+    app.use(cors());
+    app.use(express.static('./'));
+
+    app.all('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'index.html'), {root: './'});
     });
 
-    server.use(express.static('./'));
-
-    server.all('/*', function (req, res) {
-        res.sendFile('index.html', {root: './'});
+    app.listen(port, '0.0.0.0', function onStart(err) {
+        if (err) {
+            console.log(err);
+        }
+        console.info('Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
     });
-
-    server.listen(port);
-    console.log('Express static server running for openmaths-static on port ' + port);
 });
 
 gulp.task('sass', function () {
@@ -32,7 +35,7 @@ gulp.task('sass', function () {
 
 gulp.task('default', function () {
     gulp.watch('css/_inc/**/*.sass', ['sass']);
-    gulp.start('staticServer');
+    gulp.start('server');
 });
 
 function compileSass(name, pathToSass) {
