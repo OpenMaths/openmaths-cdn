@@ -133,7 +133,7 @@ $column-numbers: 12
           padding-top: $base-unit-layout
           padding-left: $double-unit-layout + $base-unit-layout
           font:
-            family: $ff-meslo
+            family: $ff-roboto-mono
 
           a
             color: #2980b9
@@ -143,8 +143,8 @@ $column-numbers: 12
 
           strong, b
             font:
-              weight: 500
-              family: $ff-meslo-bold
+              weight: 700
+              family: $ff-roboto-mono
 
           .label
             border-color: $color-black
@@ -152,27 +152,30 @@ $column-numbers: 12
             display: inline-block
             white-space: nowrap
             font:
-              size: rem(12px)
+              family: $ff-roboto-mono
+              size: rem(10px)
 
           .heading
             display: block
             margin: 0
             padding: $half-unit-layout 0 $base-unit-layout
             font:
-              family: $ff-meslo-bold
+              family: $ff-roboto-mono
               size: rem(18px)
               // Safari normalisation
-              weight: 500
+              weight: 700
 
           main
             line-height: 1.6
             font:
               size: rem(13px)
+              weight: 300
 
             h3
               font:
-                family: $ff-meslo-bold
+                family: $ff-roboto-mono
                 size: rem(16px)
+                weight: 500
 
 @for $i from 1 through $column-numbers
   .columns-#{$i}
