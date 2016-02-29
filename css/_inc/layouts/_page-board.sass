@@ -10,8 +10,8 @@ $column-numbers: 12
     height: 100vh
 
   .controls-boundaries
-    $size: $base-unit-layout + $base-unit-layout
-    $hidden: $base-unit-layout
+    $size: $base-unit-layout + $base-unit-layout + $base-unit-layout
+    $hidden: $base-unit-layout + $quarter-unit-layout
 
     +transition(all .25s)
     +z-index(column-controls-boundaries)
@@ -24,7 +24,7 @@ $column-numbers: 12
     color: #2ecc71
     opacity: 0
     font:
-      size: rem(18px)
+      size: rem(20px)
 
     +hover
       opacity: 1
@@ -92,6 +92,7 @@ $column-numbers: 12
         .control
           display: inline-block
           margin: 0 $half-unit-layout 0 0
+          opacity: 1
 
           &.insert
             +animation(pulse 2s linear infinite)
@@ -105,12 +106,14 @@ $column-numbers: 12
       margin-top: $half-unit-layout
       background: #2ecc71
       color: white
+      opacity: 0
 
       +hover
         max-width: rem(150px)
 
       &.info
         background-color: #3498db
+        opacity: 1
 
       &.edit
         background-color: #2c3e50
@@ -132,13 +135,18 @@ $column-numbers: 12
       height: 100%
       border-right: 1px solid $color-grey-50
       overflow: hidden
-
-      &.blur
-        article
-          filter: blur(2px)
+      //
+      //&.blur
+      //  article
+      //    filter: blur(2px)
 
       &:last-of-type
         border-right: 0
+
+      +hover
+        > .controls-expandable
+          .control
+            opacity: 1
 
       .uoi-bounding-box
         position: absolute
