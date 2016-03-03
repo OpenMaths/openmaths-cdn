@@ -9,6 +9,36 @@ $column-numbers: 12
   &.parent
     height: 100vh
 
+  .creatable
+    +z-index(cell-creatable)
+
+    position: absolute
+    cursor: grabbing
+    background: rgba(46, 204, 113, 0.1)
+    border: 4px dashed rgba(46, 204, 113, 0.9)
+
+    &.add-row
+      width: 100%
+      height: $double-unit-layout
+      left: 0
+
+      &.bottom
+        bottom: 0
+
+      &.top
+        top: 0
+
+    &.add-column
+      width: $double-unit-layout
+      height: 100%
+      top: 0
+
+      &.right
+        right: 0
+
+      &.left
+        left: 0
+
   .controls-boundaries
     $size: $base-unit-layout + $base-unit-layout + $base-unit-layout
     $hidden: $base-unit-layout + $quarter-unit-layout
