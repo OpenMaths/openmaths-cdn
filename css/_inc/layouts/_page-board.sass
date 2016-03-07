@@ -235,23 +235,49 @@ $column-numbers: 12
           .heading
             display: block
             margin: 0
-            padding: $half-unit-layout 0 $base-unit-layout
+            padding: 2px 0 $base-unit-layout
             font:
               family: $ff-roboto-mono
-              size: rem(18px)
+              size: rem(20px)
               weight: 700
 
           main
+            word-break: break-word
             line-height: 1.6
             font:
               size: rem(13px)
               weight: 300
 
-            h3
+            h2, h2 > * , h3, h3 > *, h4, h4 > *, h5, h5 > *
               font:
                 family: $ff-roboto-mono
+                size: rem(18px)
+                weight: 700
+
+            h3, h3 > *
+              font:
                 size: rem(16px)
                 weight: 500
+
+            h4, h4 > *
+              font:
+                size: rem(16px)
+                weight: 500
+
+            img
+              max-width: 100%
+
+            table
+              margin: $base-unit-layout 0
+              font:
+                size: rem(13px)
+
+              th, tr, td
+                font:
+                  size: rem(13px)
+
+              &.infobox
+                width: 100% !important
 
 @for $i from 1 through $column-numbers
   .columns-#{$i}
