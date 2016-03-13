@@ -1,0 +1,211 @@
+$nav-primary-height: $quadruple-unit-layout
+
+nav#primary
+  $icon-size: $double-unit-layout
+
+  +z-index(nav)
+  +clearfix
+
+  padding: 0 $base-unit-layout
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  display: block
+  height: $nav-primary-height
+  background: white
+  border-bottom: 1px solid $color-grey-100
+
+  .dark &
+    background: $color-black
+    border-bottom-color: $color-grey-800
+
+  &.no-border
+    border-bottom: 0
+
+  &.hidden
+    +transition(top .25s)
+
+    top: -($nav-primary-height)
+
+    .ui-show-nav
+      display: block
+
+    &.visible, &:hover
+      top: 0
+
+      .ui-show-nav
+        opacity: 0
+
+  .logo
+    width: $nav-primary-height
+    height: $nav-primary-height
+    display: block
+    position: absolute
+    overflow: hidden
+    left: 50%
+    top: 0
+    margin-left: -($nav-primary-height / 2)
+    background:
+      color: transparent
+      repeat: no-repeat
+      position: center center
+      size: $triple-unit-layout
+      image: url('/images/logo/glyph-black.svg')
+
+    .dark &
+      background:
+        image: url('/images/logo/glyph-white.svg')
+
+    strong
+      opacity: 0
+
+  ul
+    +clearfix
+    @extend .unstyled
+
+    display: block
+    float: left
+
+    li
+      +transition(color .25s)
+
+      color: $color-grey-200
+      float: left
+      padding: 0 $half-unit-layout
+
+      .dark &
+        color: $color-grey-500
+
+      &:first-of-type
+        padding-left: 0
+
+      &:last-of-type
+        padding-right: 0
+
+      +hover
+        color: $color-black
+
+        .dark &
+          color: $color-grey-100
+
+      a
+        font-size: rem(15px)
+        display: block
+        color: inherit
+        position: relative
+        height: $nav-primary-height
+        line-height: $nav-primary-height
+        text-decoration: none
+
+        .fa
+          margin-right: rem(4px)
+          position: relative
+          top: rem(2px)
+          line-height: 1
+          font:
+            size: rem(22px)
+
+          &.fa-safari
+            margin-right: rem(2px)
+            top: rem(2px)
+            font:
+              size: rem(21px)
+
+      &.active
+        color: $color-black
+
+        .dark &
+          color: $color-grey-100
+
+    &.actions
+      float: right
+
+      li
+        +hover
+          a
+            max-width: rem(200px)
+
+        &.user
+          span
+            cursor: default
+            display: block
+            color: $color-black
+            height: $nav-primary-height
+            line-height: $nav-primary-height
+            font:
+              size: rem(12px)
+
+            .dark &
+              color: $color-grey-100
+
+        a
+          +icon-expand(rem(24px), rem(12px), rem(16px))
+
+          .icon-label
+            padding-left: rem(28px)
+
+  .ui-show-nav
+    $slider-size: $double-unit-layout + $half-unit-layout
+
+    +transition(opacity .25s)
+
+    display: none
+    opacity: 1
+    width: $slider-size
+    height: $slider-size + $base-unit-layout
+    position: absolute
+    bottom: -($slider-size + $base-unit-layout)
+    left: 50%
+    margin-left: -($slider-size / 2)
+
+    .ui-jalousie
+      cursor: pointer
+      width: $slider-size
+      height: $slider-size
+      background: $color-black
+      margin-top: $base-unit-layout
+      position: relative
+
+      .dark &
+        background: white
+
+      i
+        position: absolute
+        width: 50%
+        left: 25%
+        top: 50%
+        display: block
+        height: 1px
+        background: white
+
+        .dark &
+          background: $color-black
+
+        &:first-of-type
+          top: 35%
+
+        &:last-of-type
+          top: 65%
+
+  &.transparent
+    background: transparent
+    border: 0
+
+    .logo
+      background:
+        image: url('/images/logo/glyph-white.svg')
+
+    ul
+      li
+        +hover
+          color: white
+
+        &.active
+          color: white
+
+      &.actions
+        li
+          &.user
+            span
+              color: white

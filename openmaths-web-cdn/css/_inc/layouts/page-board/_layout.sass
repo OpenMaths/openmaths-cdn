@@ -1,0 +1,65 @@
+.page-explore
+  $max-row-numbers: 6
+
+  @for $i from 1 through $max-row-numbers
+    $size: (100 / $i)
+
+    .rows-#{$i}
+      .row
+        height: #{$size}vh
+
+    .columns-#{$i}
+      .row
+        .column
+          width: #{$size}%
+
+  .dark &
+    background: $color-black
+
+  .row
+    +clearfix
+
+    border-bottom: 1px solid $color-grey-100
+    // @TODO until resolved
+    //min-height: rem(220px)
+
+    .resize-row
+      +z-index(resize-row)
+
+      // @TODO until resolved
+      display: none
+
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 100%
+      height: rem(8px)
+      cursor: row-resize
+
+    .dark &
+      border-bottom-color: $color-grey-800
+
+    &:last-of-type
+      border-bottom: 0
+
+    .column
+      border-right: 1px solid $color-grey-100
+      height: 100%
+      float: left
+
+      .dark &
+        border-right-color: $color-grey-800
+
+      &:last-of-type
+        border-right: 0
+
+      +hover
+        .umi
+          .controls-holder,
+          .manage-rows, .manage-columns,
+          .voting
+            opacity: 1
+
+      .umi
+        position: relative
+        height: 100%

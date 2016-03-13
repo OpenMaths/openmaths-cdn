@@ -1,0 +1,78 @@
+.page-contribute
+  .search-results
+    @extend .unstyled
+    +z-index(contribute-form-search-results)
+
+    display: none
+    top: 100%
+    position: absolute
+    background: white
+    width: 100%
+    border-bottom: 1px solid $color-grey-100
+    border-top: 1px solid $color-grey-100
+
+    .dark &
+      background: $color-black
+      border-bottom-color: $color-grey-800
+      border-top-color: $color-grey-800
+
+    &.show
+      display: block
+
+    $preview-icon-size: rem(18px)
+    $category-label-height: rem(20px)
+
+    li
+      +transition(background .25s)
+
+      cursor: pointer
+      position: relative
+      padding: rem(15px) $base-unit-layout
+
+      &.active, &:hover, &:active
+        background: $color-grey-25
+
+        .dark &
+          background: $color-grey-800
+
+      strong
+        +ellipsis()
+
+        display: block
+        font:
+          family: $ff-meslo
+          size: rem(11px)
+          weight: 500
+
+        .dark &
+          color: $color-grey-100
+
+        mark
+          font:
+            family: $ff-meslo-bold
+
+      em
+        font:
+          style: normal
+          weight: 700
+
+      .label
+        +transition(right .15s)
+
+        position: absolute
+        right: $base-unit-layout
+        padding: 0 $half-unit-layout
+        height: $category-label-height
+        line-height: $category-label-height
+        margin-top: -($category-label-height / 2)
+        top: 50%
+        background: white
+        border: 1px solid $color-black
+        color: $color-black
+        font:
+          size: rem(10px)
+
+        .dark &
+          background: $color-black
+          color: $color-grey-100
+          border-color: $color-grey-100

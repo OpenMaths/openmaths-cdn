@@ -1,0 +1,143 @@
+$modal-header-font-size: rem(18px)
+
+.modal-backdrop
+  +z-index(modal-backdrop)
+
+  display: none
+  top: 0
+  left: 0
+  position: fixed
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, .85)
+  overflow-y: auto
+
+  &.open
+    display: block
+
+  .modal
+    +border-radius(3px)
+
+    margin: ($quadruple-unit-layout * 2) auto
+    width: 100%
+    max-width: rem(700px)
+    background: white
+
+    .dark &
+      background: $color-black
+      color: $color-grey-200
+
+    > header,
+    > main,
+    > footer
+      margin: 0
+      padding: $double-half-unit-layout
+      font:
+        family: $ff-meslo
+
+    > header
+      position: relative
+      border-bottom: 1px solid $color-grey-100
+
+      .dark &
+        border-bottom-color: $color-grey-800
+
+      .close,
+      .undo
+        @extend .text-center
+
+        color: white
+        cursor: pointer
+        right: $double-half-unit-layout
+        top: 50%
+        margin-top: -($modal-header-font-size / 2)
+        position: absolute
+        width: $modal-header-font-size
+        height: $modal-header-font-size
+        line-height: $modal-header-font-size
+        background: $color-red
+
+      .heading
+        font:
+          family: $ff-meslo-bold
+          size: $modal-header-font-size
+
+    > footer
+      border-top: 1px solid $color-grey-50
+
+      &.btn
+        +border-radius(0 0 3px 3px)
+
+        cursor: pointer
+
+        &.red
+          border-top: 1px solid $color-red-600
+          background: $color-red
+          color: white
+
+    > main
+      background: $color-grey-25
+
+      .dark &
+        background: $color-grey-800
+
+      &#umi-detail-controls
+        +clearfix
+
+        background: transparent
+        padding: 0
+
+        > .content
+          position: relative
+          background: $color-grey-25
+
+          .dark &
+            background: $color-black
+
+          .umi
+            position: absolute
+            width: 100%
+            height: 100%
+
+        > .controls
+          border-left: 1px solid $color-grey-100
+          background: $color-grey-50
+          padding: $double-unit-layout
+
+          .dark &
+            border-left-color: $color-grey-800
+            background: $color-black
+
+          .info
+            font:
+              size: rem(12px)
+
+            hr
+              margin: $base-unit-layout 0
+
+              .dark &
+                border-top-color: $color-grey-800
+
+            span
+              +ellipsis()
+
+              margin: 0 0 $half-unit-layout
+              display: block
+
+              &.link
+                color: inherit
+
+              &:last-of-type
+                margin-bottom: 0
+
+    .umi-additional-info
+      margin-top: 0
+      padding: $double-unit-layout
+      border-top-color: $color-grey-100
+
+      .dark &
+        border-top-color: $color-grey-800
+
+      .info-unit
+        &:first-of-type
+          padding-top: 0

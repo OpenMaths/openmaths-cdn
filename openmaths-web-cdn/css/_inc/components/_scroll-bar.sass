@@ -1,0 +1,72 @@
+$ps-rail-hover: $color-grey-50
+$ps-bar-default: $color-grey-100
+$ps-bar-hover: $color-grey-200
+$sidebar-width: rem(8px)
+
+=scrollbar-rail-default
+  +transition(background-color 0.2s linear, opacity 0.2s linear)
+
+  display: none
+  position: absolute
+  opacity: 0
+
+=scrollbar-rail-hover
+  background-color: $ps-rail-hover
+  opacity: 0.9
+
+=scrollbar-default
+  +transition(background-color 0.2s linear)
+
+  position: absolute
+  background-color: $ps-bar-default
+
+=scrollbar-hover
+  background-color: $ps-bar-hover
+
+=in-scrolling
+  &.ps-in-scrolling
+    pointer-events: none
+    &.ps-x > .ps-scrollbar-x-rail
+      +scrollbar-rail-hover
+      > .ps-scrollbar-x
+        +scrollbar-hover
+    &.ps-y > .ps-scrollbar-y-rail
+      +scrollbar-rail-hover
+      > .ps-scrollbar-y
+        +scrollbar-hover
+
+.ps-container
+  overflow: hidden !important
+  &.ps-active-x > .ps-scrollbar-x-rail,
+  &.ps-active-y > .ps-scrollbar-y-rail
+    display: block
+  +in-scrolling
+  > .ps-scrollbar-x-rail
+    +scrollbar-rail-default
+    bottom: 0
+    height: $sidebar-width
+    > .ps-scrollbar-x
+      +scrollbar-default
+      bottom: 0
+      height: $sidebar-width
+  > .ps-scrollbar-y-rail
+    +scrollbar-rail-default
+    right: 0
+    width: $sidebar-width
+    > .ps-scrollbar-y
+      +scrollbar-default
+      right: 0
+      width: $sidebar-width
+  &:hover
+    +in-scrolling
+    > .ps-scrollbar-x-rail,
+    > .ps-scrollbar-y-rail
+      opacity: 0.6
+    > .ps-scrollbar-x-rail:hover
+      +scrollbar-rail-hover
+      > .ps-scrollbar-x
+        +scrollbar-hover
+    > .ps-scrollbar-y-rail:hover
+      +scrollbar-rail-hover
+      > .ps-scrollbar-y
+        +scrollbar-hover

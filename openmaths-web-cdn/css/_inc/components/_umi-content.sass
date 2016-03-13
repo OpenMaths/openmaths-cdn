@@ -1,0 +1,251 @@
+.umi
+  .add-content
+    +transition(opacity .25s)
+
+    display: none
+    padding: $double-unit-layout
+    cursor: pointer
+    opacity: 0
+    position: absolute
+    width: 100%
+    height: 100%
+    background:
+      color: transparent
+      image: url('#{$image-base}/icons/icon-set_search-grey.svg')
+      position: center center
+      repeat: no-repeat
+      size: 25%
+
+    +hover
+      opacity: .75
+
+    form
+      input
+        +box-shadow(none)
+        +border-radius(0)
+        @extend .text-center
+
+        color: $color-black
+        border: 0
+        border-bottom: 1px solid $color-grey-100
+        width: 100%
+        margin: 0
+
+        &:focus
+          border-color: $color-black
+
+  .content
+    +z-index(board-column-content)
+
+    position: absolute
+    width: 100%
+    height: 100%
+
+    .dark &
+      color: $color-grey-200
+
+    &.error
+      article .wrapper main
+        color: $color-red
+        white-space: pre-line
+
+    article
+      min-height: 100%
+      padding: $double-unit-layout
+      font:
+        family: $ff-meslo
+
+      .traditional &
+        font:
+          family: $ff-traditional
+
+      strong, b
+        font:
+          weight: 500
+          family: $ff-meslo-bold
+
+        .traditional &
+          font:
+            weight: 700
+            family: $ff-traditional
+
+      .wrapper
+        width: 100%
+
+        .label
+          border-color: $color-black
+          color: $color-black
+          display: inline-block
+          white-space: nowrap
+          font:
+            size: rem(12px)
+
+          .dark &
+            color: $color-grey-100
+            border-color: $color-grey-100
+
+        .heading
+          margin: 0
+          padding: ($base-unit-layout - $quarter-unit-layout) 0 $base-unit-layout
+          font:
+            family: $ff-meslo-bold
+            size: rem(20px)
+            // Safari normalisation
+            weight: 500
+
+          .traditional &
+            font:
+              size: rem(24px)
+              weight: 700
+              family: $ff-traditional
+
+        main
+          line-height: 1.7
+          font:
+            size: rem(13px)
+
+          .traditional &
+            font:
+              size: rem(15px)
+
+          h3
+            font:
+              size: rem(18px)
+
+            .traditional &
+              font:
+                family: $ff-traditional
+                size: rem(20px)
+
+          .expand-umi
+            +z-index(expand-umi)
+            $arrow-size: $double-unit-layout
+
+            position: relative
+            font:
+              weight: 700
+
+            .expand
+              +z-index(expand-umi-arrow)
+              +transition(all .25s)
+              @extend .text-center
+
+              cursor: pointer
+              opacity: 0
+              position: absolute
+              background: white
+              color: $color-black
+              border: 1px solid $color-black
+              width: $arrow-size
+              height: $arrow-size
+              line-height: $arrow-size
+              display: block
+
+              &.expand-left, &.expand-right
+                top: 50%
+                margin-top: -($arrow-size / 2)
+
+                &.expand-left
+                  left: 0
+
+                &.expand-right
+                  left: auto
+                  right: 0
+
+              &.expand-up, &.expand-down
+                left: 50%
+                margin-left: -($arrow-size / 2)
+
+                &.expand-up
+                  top: 0
+
+                &.expand-down
+                  top: auto
+                  bottom: 0
+
+            +hover
+              .expand
+                opacity: 1
+
+                &.expand-left
+                  left: -($arrow-size)
+
+                &.expand-right
+                  right: -($arrow-size)
+
+                &.expand-up
+                  top: -($arrow-size)
+
+                &.expand-down
+                  bottom: -($arrow-size)
+
+.expand-umi, [expand-umi]
+  +animation(pulse-small 2s linear infinite)
+
+  display: inline-block
+  cursor: grab
+  position: relative
+  font:
+    weight: 500
+
+  &:active
+    cursor: grabbing
+
+  &.disabled
+    +animation(none)
+
+    cursor: pointer
+
+.umi-additional-info
+  margin-top: $double-unit-layout
+  border-top: 1px solid $color-grey-50
+  color: $color-black
+  font:
+    family: $ff-meslo
+
+  .dark &
+    border-top-color: $color-grey-800
+    color: $color-grey-500
+
+    .info-unit
+      .label
+        color: $color-grey-500 !important
+        border-color: $color-grey-500 !important
+
+  .info-unit
+    padding-top: $base-unit-layout
+
+    header
+      padding-bottom: $quarter-unit-layout
+      font:
+        size: rem(12px)
+
+      .fa
+        font:
+          size: rem(14px)
+
+    .label
+      color: $color-black
+      border-color: $color-black
+      position: relative
+      margin-right: $quarter-unit-layout
+      padding-right: $base-unit-layout + rem(2px)
+      font:
+        size: rem(11px)
+
+      i
+        position: absolute
+        right: rem(2px)
+        margin-top: -(rem(2px))
+        top: 0
+        padding: $quarter-unit-layout
+        text-decoration: none
+        font:
+          size: rem(14px)
+          style: normal
+          weight: 700
+
+  &.no-controls
+    .info-unit
+      .label
+        padding-right: $half-unit-layout

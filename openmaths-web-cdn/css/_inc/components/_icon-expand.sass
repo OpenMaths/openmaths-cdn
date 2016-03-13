@@ -1,0 +1,79 @@
+=icon-expand($icon-container-size: rem(24px), $label-size: rem(12px), $icon-size: rem(16px), $delay: .25s)
+  +clearfix
+  +transition(max-width .25s)
+
+  transition-delay: $delay
+
+  position: relative
+  max-width: $icon-container-size
+  overflow: hidden
+
+  .icon-label, .fa
+    display: inline-block
+
+  .icon-label
+    // @TODO investigate this weird hack..
+    vertical-align: top
+    padding-left: $icon-container-size
+    white-space: nowrap
+    font:
+      size: $label-size
+
+  .fa
+    @extend .text-center
+
+    position: absolute
+    left: 0
+    top: 50%
+    margin-top: -($icon-container-size / 2)
+    width: $icon-container-size
+    height: $icon-container-size
+    line-height: $icon-container-size
+    font:
+      size: $icon-size
+
+=icon-expand-circle($icon-container-size: rem(24px), $label-size: rem(12px), $icon-size: rem(16px), $delay: .25s)
+  +clearfix
+  +border-radius($icon-container-size / 2)
+  +transition(max-width .25s, opacity .25s)
+
+  transition-delay: $delay
+
+  display: block
+  position: relative
+  max-width: $icon-container-size
+  height: $icon-container-size
+  overflow: hidden
+  cursor: pointer
+
+  .icon-label, .fa
+    display: inline-block
+
+  .icon-label
+    //position: relative
+    //top: 1px
+    height: $icon-container-size
+    line-height: $icon-container-size
+    padding-left: $icon-container-size
+    padding-right: $half-unit-layout + $quarter-unit-layout
+    white-space: nowrap
+    font:
+      family: $ff-roboto
+      size: $label-size
+      weight: 400
+
+  .fa
+    @extend .text-center
+
+    position: absolute
+    left: 0
+    top: 50%
+    margin-top: -($icon-container-size / 2)
+    width: $icon-container-size
+    height: $icon-container-size
+    line-height: $icon-container-size
+    font:
+      size: $icon-size
+
+    &.offset-top
+      margin-top: -($icon-container-size / 2) + rem(1px)

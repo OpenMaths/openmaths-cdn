@@ -1,0 +1,130 @@
+.page-explore
+  $text-color: rgba(255, 255, 255, .4)
+  $text-color-light: rgba(255, 255, 255, .2)
+  $text-color-focus: white
+
+  .dive-view-port
+    +transition(top .5s linear)
+
+    display: table
+    top: 0
+    position: absolute
+    width: 100%
+    height: 100vh
+    overflow: hidden
+
+    &.inactive
+      top: -150vh
+
+  .ui-diver
+    +z-index(ui-diver)
+
+    position: absolute
+    top: 0
+    // This can go up to -10% when typing
+    left: 0
+    width: 100%
+    height: 110%
+    background:
+      color: #03233C
+      // @TODO abstract to var?
+      image: url('#{$image-base}/background/cover-dive.jpg')
+      position: center top
+      repeat: no-repeat
+      size: cover
+
+  .dive-actions
+    +z-index(dive-actions)
+    +transition(padding-top .25s)
+
+    overflow-y: auto
+    display: table-cell
+    vertical-align: middle
+    position: relative
+    padding: $double-unit-layout
+
+    &.touched
+      padding-top: $quadruple-unit-layout * 2
+
+    form
+      input
+        @extend .text-center
+
+        color: white
+        margin: 0
+        background: transparent
+        width: 100%
+        display: block
+        font:
+          size: rem(60px)
+
+        +placeholder
+          color: $text-color-light
+
+    .search-results
+      position: relative
+      margin: $double-unit-layout auto 0
+      padding: 0
+      list-style: none
+      max-width: rem(600px)
+      // 5 results
+      max-height: rem(80px) * 5
+
+      li
+        +transition(color .25s)
+
+        cursor: pointer
+        color: $text-color
+        padding: $double-half-unit-layout 0 0
+        font:
+          family: $ff-meslo
+
+        &:first-of-type
+          padding: 0
+
+        &.active,
+        &:hover,
+        &:focus
+          color: $text-color-focus
+
+          .details
+            .label
+              color: $text-color-focus
+              border-color: $text-color-focus
+
+        strong
+          +ellipsis
+
+          padding: 0 0 $quarter-unit-layout
+          display: block
+          font:
+            size: rem(18px)
+            weight: 500
+
+          mark
+            font:
+              family: $ff-meslo-bold
+
+        .details
+          +clearfix
+
+          display: block
+
+          .label
+            +transition(all .25s)
+
+            color: $text-color
+            border-color: $text-color
+
+          em.label
+            border: 0
+            float: right
+            font:
+              family: $ff-meslo
+              style: normal
+              size: rem(12px)
+
+          small.label
+            float: left
+            font:
+              size: rem(12px)

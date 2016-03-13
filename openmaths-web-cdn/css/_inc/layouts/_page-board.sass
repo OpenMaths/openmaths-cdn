@@ -1,0 +1,295 @@
+@import page-board/layout
+
+$column-numbers: 12
+
+.grid
+  position: relative
+  height: 100%
+
+  &.parent
+    height: 100vh
+
+  .creatable
+    +z-index(cell-creatable)
+
+    position: absolute
+    cursor: grabbing
+    background: rgba(46, 204, 113, 0.1)
+    border: 4px dashed rgba(46, 204, 113, 0.9)
+
+    &.add-row
+      width: 100%
+      height: $double-unit-layout
+      left: 0
+
+      &.bottom
+        bottom: 0
+
+      &.top
+        top: 0
+
+    &.add-column
+      width: $double-unit-layout
+      height: 100%
+      top: 0
+
+      &.right
+        right: 0
+
+      &.left
+        left: 0
+
+  .controls-boundaries
+    $size: $base-unit-layout + $base-unit-layout + $base-unit-layout
+    $hidden: $base-unit-layout + $quarter-unit-layout
+
+    +transition(all .25s)
+    +z-index(column-controls-boundaries)
+    @extend .text-center
+
+    cursor: pointer
+    position: absolute
+    display: table
+    background: rgba(255, 255, 255, .9)
+    color: #2ecc71
+    opacity: 0
+    font:
+      size: rem(20px)
+
+    +hover
+      opacity: 1
+
+    span
+      display: table-cell
+      vertical-align: middle
+
+    &.top, &.bottom
+      width: 100%
+      height: $size
+      left: 0
+
+      &.top
+        top: -($hidden)
+
+        +hover
+          top: 0
+
+      &.bottom
+        bottom: -($hidden)
+
+        +hover
+          bottom: 0
+
+    &.right, &.left
+      width: $size
+      height: 100%
+      top: 0
+
+      &.right
+        right: -($hidden)
+
+      +hover
+        right: 0
+
+      &.left
+        left: -($hidden)
+
+        +hover
+          left: 0
+
+  .controls-expandable
+    +z-index(column-controls)
+
+    top: $half-unit-layout
+    left: $base-unit-layout
+    position: absolute
+    height: 100%
+
+    &.center
+      +z-index(column-controls-center)
+
+      display: table
+      width: 100%
+      left: 0
+      top: 0
+
+      .controls-expandable-table-wrapper
+        @extend .text-center
+
+        display: table-cell
+        vertical-align: middle
+
+        .control
+          display: inline-block
+          margin: 0 $half-unit-layout 0 0
+          opacity: 1
+
+          &.insert
+            +animation(pulse 2s linear infinite)
+
+          &:last-of-type
+            margin: 0
+
+    .control
+      +icon-expand-circle($double-unit-layout, rem(12px), rem(14px))
+
+      margin-top: $half-unit-layout
+      background: #2ecc71
+      color: white
+      opacity: 0
+
+      +hover
+        max-width: rem(150px)
+
+      &.info
+        background-color: #3498db
+        opacity: 1
+
+      &.edit
+        background-color: #2c3e50
+
+      &.remove
+        background-color: #e74c3c
+
+  .row
+    +clearfix
+
+    height: 100%
+    border-bottom: 2px dashed $color-grey-50
+
+    &:last-of-type
+      border-bottom: 0
+
+    .column
+      position: relative
+      height: 100%
+      border-right: 2px dashed $color-grey-50
+      overflow: hidden
+      //
+      //&.blur
+      //  article
+      //    filter: blur(2px)
+
+      &:last-of-type
+        border-right: 0
+
+      +hover
+        > .controls-expandable
+          .control
+            opacity: 1
+
+      .uoi-bounding-box
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+
+        article
+          position: relative
+          min-height: 100%
+          padding: $double-unit-layout
+          padding-top: $base-unit-layout
+          padding-left: $double-unit-layout + $base-unit-layout + $base-unit-layout
+          font:
+            family: $ff-roboto-mono
+
+          a
+            color: #2980b9
+
+            &[expand-umi]
+              color: #2ecc71
+
+          strong, b
+            font:
+              weight: 700
+              family: $ff-roboto-mono
+
+          em, i
+            font:
+              weight: 400
+              family: $ff-roboto-mono
+
+          .expandable, .non-expandable
+            +z-index(expandable)
+
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            cursor: grabbing
+            background: rgba(46, 204, 113, 0.1)
+            border: 4px dashed rgba(46, 204, 113, 0.9)
+
+            &.non-expandable
+              cursor: no-drop
+              background: rgba(231, 76, 60, 0.1)
+              border-color: rgba(231, 76, 60, 0.9)
+
+          .label
+            border-color: $color-black
+            color: $color-black
+            display: inline-block
+            white-space: nowrap
+            font:
+              family: $ff-roboto-mono
+              size: rem(10px)
+              weight: 400
+
+          .heading
+            display: block
+            margin: 0
+            padding: 2px 0 $base-unit-layout
+            font:
+              family: $ff-roboto-mono
+              size: rem(20px)
+              weight: 500
+
+          main
+            word-break: break-word
+            line-height: 1.6
+            font:
+              size: rem(14px)
+              weight: 400
+
+            h2, h2 > * , h3, h3 > *, h4, h4 > *, h5, h5 > *
+              font:
+                family: $ff-roboto-mono
+                size: rem(18px)
+                weight: 700
+
+            h3, h3 > *
+              font:
+                size: rem(16px)
+                weight: 500
+
+            h4, h4 > *
+              font:
+                size: rem(16px)
+                weight: 500
+
+            img
+              max-width: 100%
+
+            table
+              margin: $base-unit-layout 0
+              font:
+                size: rem(13px)
+
+              th, tr, td
+                font:
+                  size: rem(13px)
+
+              &.infobox
+                width: 100% !important
+
+@for $i from 1 through $column-numbers
+  .columns-#{$i}
+    > .column
+      float: left
+      width: (100% / $i)
+
+  .rows-#{$i}
+    > .row
+      height: (100% / $i)

@@ -1,0 +1,39 @@
+{
+  "name": "openmaths-static",
+  "version": "0.0.1",
+  "description": "OpenMaths Web App dependencies",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "",
+    "setup": "npm install -g gulp",
+    "start": "gulp",
+    "distill": "gulp sass && rm -r dist && mkdir dist && cp -r css dist/ && rm -r dist/css/_inc && cp -r fonts dist/ && cp -r images dist/ && cp index.html dist/",
+    "package": "tar -cf openmaths-cdn.tar css/* fonts/* images/* .gitignore gulpfile.js index.html package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OpenMaths/openmaths-static.git"
+  },
+  "keywords": [
+    "openmaths"
+  ],
+  "author": "Slavomir Vojacek <slavomirvojacek@gmail.com> http://slavo.london",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenMaths/openmaths-static/issues"
+  },
+  "homepage": "https://github.com/OpenMaths/openmaths-static",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "node-sass": "^3.3.3",
+    "path": "^0.12.7"
+  }
+}

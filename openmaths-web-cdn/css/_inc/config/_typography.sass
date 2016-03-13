@@ -1,0 +1,33 @@
+$ff-regular-font-path: '../fonts/meslo-regular' !default
+$ff-bold-font-path: '../fonts/meslo-bold' !default
+
+@font-face
+  font-family: 'meslo'
+  src: url('#{$ff-regular-font-path}/meslo-regular.eot?#iefix') format('embedded-opentype'), url('#{$ff-regular-font-path}/meslo-regular.woff') format('woff'), url('#{$ff-regular-font-path}/meslo-regular.ttf')  format('truetype'), url('#{$ff-regular-font-path}/meslo-regular.svg#meslo-bold') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'meslo-bold'
+  src: url('#{$ff-bold-font-path}/meslo-bold.eot?#iefix') format('embedded-opentype'), url('#{$ff-bold-font-path}/meslo-bold.woff') format('woff'), url('#{$ff-bold-font-path}/meslo-bold.ttf')  format('truetype'), url('#{$ff-bold-font-path}/meslo-bold.svg#meslo-bold') format('svg')
+  font-weight: normal
+  font-style: normal
+
+$ff-anonymous-pro: "Anonymous Pro", Helvetica, Arial, sans-serif
+
+$ff-meslo: "meslo", Helvetica, Arial, sans-serif
+$ff-meslo-bold: "meslo-bold", Helvetica, Arial, sans-serif
+
+$ff-roboto: "Roboto", Helvetica, Arial, sans-serif
+$ff-inconsolata: "Inconsolata", monospace
+$ff-roboto-mono: "Roboto Mono", monospace
+$ff-source-code-pro: "Source Code Pro", monospace
+
+$ff-traditional: "Times New Roman", serif
+
+// This is the primary font stack. It is to be used on most elements containing
+// text, mainly longform, but also inputs and buttons.
+$font-family-primary: $ff-anonymous-pro
+
+// This is the secondary font stack. It is to be used mainly on headings.
+$font-family-secondary: $ff-meslo
