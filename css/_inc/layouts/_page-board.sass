@@ -155,7 +155,7 @@ $column-numbers: 12
     +clearfix
 
     height: 100%
-    border-bottom: 1px solid $color-grey-50
+    border-bottom: 2px dashed $color-grey-50
 
     &:last-of-type
       border-bottom: 0
@@ -163,7 +163,7 @@ $column-numbers: 12
     .column
       position: relative
       height: 100%
-      border-right: 1px solid $color-grey-50
+      border-right: 2px dashed $color-grey-50
       overflow: hidden
       //
       //&.blur
@@ -205,6 +205,11 @@ $column-numbers: 12
               weight: 700
               family: $ff-roboto-mono
 
+          em, i
+            font:
+              weight: 400
+              family: $ff-roboto-mono
+
           .expandable, .non-expandable
             +z-index(expandable)
 
@@ -239,13 +244,13 @@ $column-numbers: 12
             font:
               family: $ff-roboto-mono
               size: rem(20px)
-              weight: 700
+              weight: 500
 
           main
             word-break: break-word
             line-height: 1.6
             font:
-              size: rem(13px)
+              size: rem(14px)
               weight: 400
 
             h2, h2 > * , h3, h3 > *, h4, h4 > *, h5, h5 > *
